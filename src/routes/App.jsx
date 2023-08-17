@@ -1,17 +1,18 @@
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { Movies } from "./Movies";
 import { Series } from "./Series";
 
 export function App() {
-
   return (
-    <>
-    Hola mundo
-      <Home />
-      <Movies />
-      <Series />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/movies" element={<Movies />}/>
+        <Route path="/series" element={<Series />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
