@@ -1,4 +1,3 @@
-//Importación del contexto
 import { DataContextProvider } from "../dataContext/DataContext";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
