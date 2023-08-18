@@ -4,7 +4,7 @@ const DataContext = createContext();
 
 const API = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 
-const DataContextProvider = ({ children }) => {
+function DataContextProvider ({ children }) {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false);
@@ -14,7 +14,7 @@ const DataContextProvider = ({ children }) => {
     setMovies(moviesData);
   }
   function filterSeries(res) {
-    const seriesData = res.filter(item => (item.programType === 'movie' && item.releaseYear >= 2010));
+    const seriesData = res.filter(item => (item.programType === 'series' && item.releaseYear >= 2010)).slice(0, 20);
     setSeries(seriesData);
   }
   
@@ -24,7 +24,7 @@ const DataContextProvider = ({ children }) => {
       .then(res => {
         filterMovies(res.entries);
         filterSeries(res.entries);
-        setValidator(true)
+        setValidator(true);
       });
   }, []);
 
