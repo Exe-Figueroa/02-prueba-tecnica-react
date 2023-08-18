@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { Movies } from "./Movies";
 import { Series } from "./Series";
+import { Header } from "../components/Header";
 
 export function App() {
   return (
