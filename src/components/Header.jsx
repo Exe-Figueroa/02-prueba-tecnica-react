@@ -1,8 +1,21 @@
+import "../styles/Header.css"
 
 export function Header(){
     return(
-        <h1 className='header-title'> DEMO Streaming </h1>
-     
+       <header>
+        <div className="header-container-title">
+            <h1 className="header-principal-title">DEMO streaming</h1>
+            <ul className="header-principal-title-accesories">
+               <li className="header-title-login">Log in</li>
+                <li className="header-title-start">Start your free trial</li>
+            </ul>
+        </div>
+        <div>
+            <ul className="header-secondary-title"> 
+                <li>Popular Titles</li>
+            </ul>
+        </div>
+       </header>
     )
 }
 
