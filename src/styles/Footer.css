@@ -1,70 +1,87 @@
 footer {
-  background-color: #0d4491;
+  background: #0D4491;
+  background: -moz-linear-gradient(top, #0D4491 0%, #2388CB 100%, #114444 100%);
+  background: -webkit-linear-gradient(top, #0D4491 0%, #2388CB 100%, #114444 100%);
+  background: linear-gradient(to bottom, #0D4491 0%, #2388CB 100%, #114444 100%);color: white;
   color: white;
   font-family: Roboto, sans-serif;
 }
+
 .footer-container {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  height: 25%;
 }
+
 .footer-container-ul {
+  margin-top: 18px;
+  padding: 15px;
   display: flex;
-  gap: 25px;
+  gap: 10px;
   flex-wrap: wrap;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 400;
   list-style: none;
+  justify-content: center;
+  align-items: center;
 }
+
 .footer-container-p {
-  font-size: 1.2rem;
-  margin-left: 40px;
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
 }
+
 .footer-container-icons {
+  margin-top: 10px;
   display: flex;
   flex-direction: column-reverse;
-  padding: 20px;
-  gap: 20px;
+  align-items: center;  
+  gap: 10px;
 }
+
 .footer-container-icons-social {
   display: flex;
-  gap: 27px;
-  margin-top: 30px;
-  margin: 0 auto;
+  gap: 15px;
+  margin: 10px 0;
 }
+
 .footer-container-icons-store {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-}
-.footer-container-icons-social img {
-  width: 50px;
-  height: 60px;
-}
-.footer-container-icons-store img {
-  width: 180px;
-  height: 80px;
 }
 
-@media (min-width: 1000px) {
-  .footer-container {
-    margin: 0 60px;
-  }
+.footer-container-icons-social img {
+  width: 40px;
+  height: 50px;
+}
+
+.footer-container-icons-store img {
+  width: 130px;
+  height: 70px;
+}
+
+@media (min-width: 768px) {
+ .footer-container {
+  padding:  0 50px;
+
+ }
   .footer-container-ul {
     flex-direction: row;
     font-size: 1.5rem;
+    justify-content: flex-start;
   }
   .footer-container-p {
     font-size: 1.4rem;
+    text-align: start;
+    margin-left: 15px;
   }
   .footer-container-icons {
-    flex-direction: row;
-    margin-top: 30px;
-    align-items: center;
+     flex-direction: row;
+     justify-content: space-between;
   }
   .footer-container-icons-social {
-    margin: 0;
-    margin-left: 10px;
+
   }
   .footer-container-icons-social img {
     width: 60px;

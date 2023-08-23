@@ -1,0 +1,9 @@
+.series-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.series-container .category-card{
+  margin: 10px;
+}

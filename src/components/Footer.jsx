@@ -22,7 +22,7 @@ export function Footer() {
         </p>
         <div className="footer-container-icons">
           <div className="footer-container-icons-social">
-            <img src={logoFacebook} alt="facebook" />
+            <img id="logoFacebook" src={logoFacebook} alt="facebook" />
             <img src={logoTwitter} alt="twitter" />
             <img src={logoInstagram} alt="instagram" />
           </div>
