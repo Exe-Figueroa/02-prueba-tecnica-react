@@ -56,32 +56,10 @@
     align-items: center;
 }
 
-@media (max-width: 640px){
 
-    .header-container-title{
-        display: flex;
-        flex-wrap: nowrap;
-        align-content: space-around;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
-    }
-
-    .header-principal-title{
-        font-size: 1.8rem;
-
-    }
-
-    .header-title-login{
-        font-size: 1rem;
-        margin:0
-        ;
-    }
-
-
-    .header-principal-title-accesories{
-        justify-content: flex-end;
-        
-    }
+@media (max-width: 768px){
+.header-principal-title-accesories{
+    display: none;
+}
 
 }
