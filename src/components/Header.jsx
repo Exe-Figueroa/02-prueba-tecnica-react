@@ -14,9 +14,9 @@ export function Header(){
             <BurgerMenu />    
         </div>
         <div>
-            <ul className="header-secondary-title"> 
-                <li>Popular Titles</li>
-            </ul>
+            <h2 className="header-secondary-title"> 
+                Popular Titles
+            </h2>
         </div>
        </header>
     )
