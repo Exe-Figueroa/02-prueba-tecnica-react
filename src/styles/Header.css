@@ -23,7 +23,7 @@
     font-weight: bold;
     font-size: 2.3rem;
     text-shadow: 2px 1px 5px rgba(1,3,4,0.79);
-    margin-left: 15px;
+    padding: 0 50px;
     justify-content: flex-start;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .header-secondary-title{
-    padding-left: 18px;
+    padding: 6px 50px;
     color: white;
     background-color: rgb(34, 33, 33);
     margin-top: 0;
@@ -56,32 +56,10 @@
     align-items: center;
 }
 
-@media (max-width: 640px){
 
-    .header-container-title{
-        display: flex;
-        flex-wrap: nowrap;
-        align-content: space-around;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
-    }
-
-    .header-principal-title{
-        font-size: 1.8rem;
-
-    }
-
-    .header-title-login{
-        font-size: 1rem;
-        margin:0
-        ;
-    }
-
-
-    .header-principal-title-accesories{
-        justify-content: flex-end;
-        
-    }
+@media (max-width: 768px){
+.header-principal-title-accesories{
+    display: none;
+}
 
 }
