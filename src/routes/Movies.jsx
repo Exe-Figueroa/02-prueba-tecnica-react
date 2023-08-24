@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CategoryCard } from "../components/CategoryCard";
 import { DataContext } from "../dataContext/DataContext";
+
 import "../styles/movie.css";
 
 export function Movies(props) {
