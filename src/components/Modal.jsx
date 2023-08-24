@@ -2,11 +2,15 @@
 import React from 'react'
 import "../styles/Modal.css"
 
-export function Modal({ title, img, description, releaseYear }) {
+export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal }) {
 
   return (
-    <div className='modal-container'>
-      <span className='exit-btn'>x</span>
+    <div className={seeModal ? 'modal-container' : 'modal-container inactive'}>
+      <span className='exit-btn'
+      onClick={()=>setSeeModal(false)}
+      >
+        x
+      </span>
       <div className='modal-container-card'>
         <img className="modal-container-img" src={img} alt="" />
         <div className='modal-container-title'>
