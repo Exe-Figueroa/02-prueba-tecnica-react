@@ -10,7 +10,8 @@ footer {
 .footer-container {
   display: flex;
   flex-direction: column;
-  height: 25%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .footer-container-ul {
@@ -64,6 +65,7 @@ footer {
 @media (min-width: 768px) {
  .footer-container {
   padding:  0 50px;
+    height: 300px;
 
  }
   .footer-container-ul {
