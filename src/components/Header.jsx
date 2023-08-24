@@ -1,12 +1,15 @@
 import "../styles/Header.css"
 import { BurgerMenu } from "./BurgerMenu"
+import { Link } from "react-router-dom"
 
 export function Header(){
     return(
        <header>
 
         <div className="header-container-title">
-            <h1 className="header-principal-title">DEMO streaming</h1>
+            <Link 
+            to=''
+            className="header-principal-title">DEMO streaming</Link>
             <ul className="header-principal-title-accesories">
                <li className="header-title-login">Log in</li>
                 <li className="header-title-start">Start your free trial</li>
