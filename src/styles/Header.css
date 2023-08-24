@@ -25,6 +25,8 @@
     text-shadow: 2px 1px 5px rgba(1,3,4,0.79);
     padding: 0 50px;
     justify-content: flex-start;
+    text-decoration: none;
+    color: #fff;
 }
 
 .header-principal-title-accesories{
@@ -61,7 +63,12 @@
 
 
 @media (max-width: 768px){
-.header-principal-title-accesories{
+
+    .header-principal-title{
+        font-size: 1.5rem;
+    }
+
+    .header-principal-title-accesories{
     display: none;
 }
 
