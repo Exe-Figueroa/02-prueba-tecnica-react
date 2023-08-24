@@ -5,10 +5,11 @@ import logoTwitter from "../assets/social/twitter-white.svg";
 import logoAppStore from "../assets/store/app-store.svg";
 import logoPlayStore from "../assets/store/play-store.svg";
 import logoWindowStore from "../assets/store/windows-store.svg";
+
 export function Footer() {
   return (
-    <footer>
-      <div className="footer-container">
+    <footer className="footer-container">
+      
         <ul className="footer-container-ul">
           <li>Home</li>
           <li>Terms and Conditions</li>
@@ -32,7 +33,7 @@ export function Footer() {
             <img src={logoWindowStore} alt="WindowStore" />
           </div>
         </div>
-      </div>
+      
     </footer>
   );
 }

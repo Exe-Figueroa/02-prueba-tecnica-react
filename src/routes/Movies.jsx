@@ -5,31 +5,13 @@ import "../styles/movie.css";
 
 export function Movies(props) {
   const { validator, movies } = useContext(DataContext);
-  const [modalState, setModalState] = useState({
-    title: "",
-    img: "",
-    description: "",
-    year: 0,
-  });
-  console.log(movies, modalState);
-
-  function filterToModal(title) {
-    const movieFiltered = movies.find((movie) => movie.title == title);
-    console.log({ movies, modalState });
-    setModalState({
-      title: movieFiltered.title,
-      img: movieFiltered.images["Poster Art"].url,
-      description: movieFiltered.description,
-    });
-  }
-
+  /* console.log(movies) */
   return (
     <div className="home-container">
-      {movies.map((index) => (
+      {movies.map(index => (
         <CategoryCard
-          filterToModal={filterToModal}
           title={index.title}
-          img={index.images["Poster Art"].url}
+          img={index.images['Poster Art'].url}
           key={index.title}
         />
       ))}
