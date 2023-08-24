@@ -12,7 +12,8 @@
   padding: 15px;
   transition: .3s ease;
 }
-.modal-container.inactive{
+
+.modal-container.inactive {
   transform: translateY(100%);
 }
 
@@ -64,4 +65,31 @@
   color: white
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+  .modal-container {
+    flex-direction: row;
+    width: 50%;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+
+  .modal-container.inactive {
+    transform: translateY(200%);
+  }
+
+  .modal-container-img {
+    border-radius: 20px;
+  }
+
+  .modal-container-text {
+    background: none;
+    font-size: 2rem;
+    color: white;
+    padding: 50px;
+    text-align: justify;
+    line-height: 3rem;
+  }
+
+
+}
