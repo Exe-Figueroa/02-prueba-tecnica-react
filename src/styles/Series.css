@@ -7,3 +7,7 @@
 .series-container .category-card{
   margin: 10px;
 }
+
+.inactive{
+  transform: translateY(100%);
+}

@@ -6,6 +6,8 @@
   border-radius: 16px;
   padding: 15px;
   position: relative;
+  
+  transition: .3s ease;
 }
 .category-card-container .category-img{
   width: 100%;
@@ -15,10 +17,19 @@
   border-radius: 16px;
   opacity: .9;
 }
+.category-card-container:hover{
+  background: #0D4491;
+}
+.category-card-container:hover .category-title{
+  font-size: 1.7rem;
+  color: #fff;
+}
 .category-card-container .category-title{
   margin: 10px auto;
   width: fit-content;
   color: #000;
+  font-size: 1.6rem;
+  transition: .2s ease;
 }
 
 .category-card-container .category-name{
