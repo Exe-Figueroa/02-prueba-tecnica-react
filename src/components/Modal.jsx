@@ -5,6 +5,8 @@ import "../styles/Modal.css"
 export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal }) {
 
   return (
+    <>
+    <div className={seeModal && "blur"}></div>
     <div className={seeModal ? 'modal-container' : 'modal-container inactive'}>
       <span className='exit-btn'
       onClick={()=>setSeeModal(false)}
@@ -19,11 +21,7 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
         </div>
       </div>
       <p className='modal-container-text'>{description}</p>
-
     </div>
-
-
-
-
+    </>
   )
 }
