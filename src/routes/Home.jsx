@@ -8,12 +8,6 @@ const imgMovies = "https://media.istockphoto.com/id/1191001701/photo/popcorn-and
 const imgSeries = "https://www.latercera.com/resizer/gXOdyP_YUsjQ2MC6U9sUOv-gRxk=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/ONNUKFN3SNHK7F4KEH2BXHHHUA.jpg";
 
 export function Home() {
-  const { validator, series, movies } = useContext(DataContext);
-
-  if (!!validator) {
-    /*  console.log({ series, movies, validator }); */
-  }
-
   return (
     <div className="home-container">
       <CategoryCard img={imgSeries} title={"Popular Series"} name={"SERIES"} />

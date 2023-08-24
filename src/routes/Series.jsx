@@ -6,6 +6,7 @@ import "../styles/Series.css"
 
 export function Series() {
   const { validator, series } = useContext(DataContext);
+  const [seeModal, setSeeModal] = useState(false)
   /*  console.log(series) */
   //Estado compuesto un objeto con propiedades no inicializadas
   const [modalState, setModalState] = useState({
@@ -25,6 +26,7 @@ export function Series() {
       description: serieFiltered.description,
       releaseYear: serieFiltered.releaseYear,
     })
+    setSeeModal(true)
   }
 
   return (
@@ -38,6 +40,8 @@ export function Series() {
         />
       ))}
       <Modal
+        seeModal={seeModal}
+        setSeeModal={setSeeModal}
         title={modalState.title}
         img={modalState.img}
         description={modalState.description}

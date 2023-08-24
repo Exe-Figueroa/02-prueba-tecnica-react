@@ -10,9 +10,10 @@ export function CategoryCard({ img, title, name, filterToModal }) {
       <img src={img} alt="" className='category-img' />
       {name && <p className="category-name">{name}</p>}
       <h2 className='category-title'
-        onClick={() => filterToModal(title)}>
-        {title}</h2>
-
+        onClick={() => filterToModal(title)}
+      >
+        {title}
+      </h2>
     </Link>
   );
 }
