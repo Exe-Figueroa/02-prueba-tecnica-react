@@ -1,0 +1,32 @@
+.error-container{
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  height: calc(100vh - 300px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-container .error{
+  background: url('../assets/backgroundNotFound.png') 80px 50%/cover no-repeat;
+  height: 300px;
+  width: 300px;
+  display: flex;
+
+  align-items: center;
+}
+.error-container .error .error-card{
+  width: 50%;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, .3);
+  animation: cosoCartel 3s  infinite;
+  border-radius: 5px;
+}
+
+@keyframes cosoCartel {
+  0%, 100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+}
