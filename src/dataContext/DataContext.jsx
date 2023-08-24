@@ -5,6 +5,7 @@ const DataContext = createContext();
 const API = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 
 function DataContextProvider ({ children }) {
+  const [error, setError] = useState(false);
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false);
@@ -25,11 +26,15 @@ function DataContextProvider ({ children }) {
         filterMovies(res.entries);
         filterSeries(res.entries);
         setValidator(true);
+      })
+      .catch(e =>{
+        setError(true)
+        console.error(e)
       });
   }, []);
 
   return (
-    <DataContext.Provider value={{ series, movies, validator }}>
+    <DataContext.Provider value={{ error, series, movies, validator }}>
       {children}
     </DataContext.Provider>
   );
