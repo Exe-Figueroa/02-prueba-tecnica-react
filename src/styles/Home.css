@@ -3,7 +3,6 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  height: calc(100vh - 370px);
+  align-items: center;
 }
-/* .home-container .category-card{
-  margin: 10px;
-} */
