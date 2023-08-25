@@ -1,9 +1,9 @@
-.home-container{
+.movies-container{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .home-container .category-card{
+  .movies-container .category-card{
     margin: 10px;
   }

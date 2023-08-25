@@ -1,7 +1,7 @@
 .error-container{
   width: 100%;
   background-color: rgba(128, 128, 128, 0.5);
-  height: calc(100vh - 300px);
+  height: calc(100vh - 370px);
   display: flex;
   justify-content: center;
   align-items: center;
