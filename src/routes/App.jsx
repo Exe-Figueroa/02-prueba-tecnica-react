@@ -6,7 +6,6 @@ import { Movies } from "./Movies";
 import { Series } from "./Series";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import {BurgerMenu} from "../components/BurgerMenu";
 
 export function App() {
   return (

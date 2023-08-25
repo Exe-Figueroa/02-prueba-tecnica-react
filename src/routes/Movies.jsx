@@ -9,7 +9,7 @@ import "../styles/movie.css";
 
 export function Movies(props) {
   const {error, validator, movies} = useContext(DataContext);
-  const [seeModal, setSeeModal] = useState(false)
+  const [seeModal, setSeeModal] = useState(false);
 
   const [modalState, setModalState] = useState({
     title: "",
@@ -26,8 +26,8 @@ export function Movies(props) {
       img: movieFiltered.images["Poster Art"].url,
       description: movieFiltered.description,
       releaseYear: movieFiltered.releaseYear,
-    })
-    setSeeModal(true)
+    });
+    setSeeModal(true);
   }
 
   

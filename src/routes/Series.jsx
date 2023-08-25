@@ -9,7 +9,6 @@ import "../styles/Series.css"
 export function Series() {
   const { error, validator, series } = useContext(DataContext);
   const [seeModal, setSeeModal] = useState(false)
-  /*  console.log(series) */
   //Estado compuesto un objeto con propiedades no inicializadas
   const [modalState, setModalState] = useState({
     title: "",
@@ -17,7 +16,6 @@ export function Series() {
     description: "",
     releaseYear: 0,
   });
-  /* console.log({ series, modalState }); */
 
   function filterToModal(title) {
     const serieFiltered = series.find(serie => serie.title == title);
