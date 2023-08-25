@@ -32,7 +32,7 @@ export function Series() {
   }
 
   return (
-    <div className="series-container">
+    <div className={validator ? "series-container" : "home-container"}>
       {
         (!validator && error) && <Error />
       }
