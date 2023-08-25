@@ -76,16 +76,20 @@
   color: white
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .modal-container {
     flex-direction: row;
-    width: 50%;
+    width: 850px;
     bottom: 50%;
     transform: translateY(50%);
   }
 
   .modal-container.inactive {
     transform: translateY(200%);
+  }
+
+  .modal-container-card {
+    margin-top: 100px;
   }
 
   .modal-container-img {
