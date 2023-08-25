@@ -2,7 +2,8 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-content: center;
   height: calc(100vh - 370px);
   align-items: center;
 }

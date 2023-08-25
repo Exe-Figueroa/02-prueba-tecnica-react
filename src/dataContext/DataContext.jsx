@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 
 const DataContext = createContext();
 
-const API = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
+const API = 'https://w.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 
 function DataContextProvider ({ children }) {
   const [error, setError] = useState(false);
