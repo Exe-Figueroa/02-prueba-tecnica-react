@@ -32,7 +32,7 @@ export function Movies(props) {
 
   
   return (
-    <div className="home-container">
+    <div className="movies-container">
       {
         (!validator && error) && <Error />
       }
