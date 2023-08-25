@@ -2,10 +2,12 @@ import React, { useContext, useState } from "react";
 import { CategoryCard } from "../components/CategoryCard";
 import { DataContext } from "../dataContext/DataContext";
 import { Modal } from "../components/Modal";
+import { Error } from "../components/Error";
+import { Loader } from "../components/Loader";
 import "../styles/Series.css"
 
 export function Series() {
-  const { validator, series } = useContext(DataContext);
+  const { error, validator, series } = useContext(DataContext);
   const [seeModal, setSeeModal] = useState(false)
   /*  console.log(series) */
   //Estado compuesto un objeto con propiedades no inicializadas
@@ -19,7 +21,7 @@ export function Series() {
 
   function filterToModal(title) {
     const serieFiltered = series.find(serie => serie.title == title);
-    console.log({ serieFiltered });
+
     setModalState({
       title: serieFiltered.title,
       img: serieFiltered.images["Poster Art"].url,
@@ -31,7 +33,13 @@ export function Series() {
 
   return (
     <div className="series-container">
-      {series.map(index => (
+      {
+        (!validator && error) && <Error />
+      }
+      {(!validator && !error) && <Loader />
+      }
+
+      {(validator && !error) && series.map(index => (
         <CategoryCard
           filterToModal={filterToModal}
           title={index.title}
