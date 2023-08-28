@@ -2,8 +2,14 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
   justify-content: center;
-  height: calc(100vh - 370px);
+  height: auto;
   align-items: center;
+}
+
+
+@media (min-width: 678px) {
+  .home-container{
+    height: calc(100vh - 370px);
+  }
 }

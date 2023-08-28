@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Category.css';
+import '../styles/CategoryCard.css';
 import { Link } from 'react-router-dom'
 
 export function CategoryCard({ img, title, name, filterToModal }) {
