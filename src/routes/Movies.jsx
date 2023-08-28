@@ -5,7 +5,7 @@ import { Loader } from "../components/Loader";
 import { DataContext } from "../dataContext/DataContext";
 import { Modal } from "../components/Modal";
 
-import "../styles/movie.css";
+import "../styles/Movie.css";
 
 export function Movies(props) {
   const {error, validator, movies} = useContext(DataContext);
