@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { DataContext } from "../dataContext/DataContext";
 import { CategoryCard } from "../components/CategoryCard";
 import "../styles/Home.css";
 
