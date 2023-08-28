@@ -1,9 +1,15 @@
 .movies-container{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.movies-container .category-card{
+  margin: 10px;
+}
+
+@media (max-width: 674px) {
+  .movies-container {
+    justify-content: center;
   }
-  .movies-container .category-card{
-    margin: 10px;
-  }
+}
