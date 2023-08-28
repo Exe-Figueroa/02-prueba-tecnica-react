@@ -28,8 +28,8 @@ function DataContextProvider ({ children }) {
         setValidator(true);
       })
       .catch(e =>{
-        setError(true)
-        console.error(e)
+        setError(true);
+        console.error(e);
       });
   }, []);
 
