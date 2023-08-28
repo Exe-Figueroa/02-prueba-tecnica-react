@@ -32,7 +32,12 @@
 .header-principal-title-accesories{
    display: flex;
    align-items: center;
-   margin-right: 30px;   
+   margin-right: 30px;
+    
+}
+
+.header-principal-title-accesories li{
+    cursor: pointer;
 }
 
 .header-title-login{

@@ -11,3 +11,9 @@
 .inactive{
   transform: translateY(100%);
 }
+
+@media (max-width: 674px) {
+  .series-container {
+    justify-content: center;
+  }
+}
