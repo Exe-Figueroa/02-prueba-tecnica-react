@@ -8,7 +8,7 @@ export function CategoryCard({ img, title, name, filterToModal }) {
       to={name}
       className='category-card-container'>
       <img src={img} alt="" className='category-img' />
-      {name && <p className="category-name">{name}</p>}
+      {name && <p className="category-name home">{name}</p>}
       <h2 className='category-title'
         onClick={() => filterToModal(title)}
       >
