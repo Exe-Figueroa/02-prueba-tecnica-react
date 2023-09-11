@@ -46,7 +46,7 @@
     color: #fff;
   }
 }
-@media (max-height: 758px) {
+@media (max-height: 720px) {
   .category-card-container{
     width: 200px;
   }

@@ -4,14 +4,33 @@ import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 
 import { Modal } from "../components/Modal";
-const API = 'http://localhost:3000/movies';
+
 import "../styles/Movie.css";
+const API = 'http://localhost:3000/movies';
 
 export function Movies(props) {
-  // el consumo de la API
-useEffect(()=>{
-  fetch(API)
-}, [])
+  const [movies, setMovies] = useState([]);
+  const [ validator, setValidator ] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function filterMovies(res) {
+    const moviesData = await res.filter(item => (item.release_year >= 2010));
+    setMovies(moviesData);
+    setValidator(true);
+    console.log(movies)
+  }
+  useEffect(()=>{
+    fetch(API)
+    .then(res=>res.json())
+    .then(response=>{
+      filterMovies(response);
+    })
+    .catch(e=>{
+      console.error(e);
+      setError(true);
+    });
+
+  }, []);
 
   const [seeModal, setSeeModal] = useState(false);
 
@@ -27,9 +46,9 @@ useEffect(()=>{
     
     setModalState({
       title: movieFiltered.title,
-      img: movieFiltered.images["Poster Art"].url,
+      img: movieFiltered.img,
       description: movieFiltered.description,
-      releaseYear: movieFiltered.releaseYear,
+      releaseYear: movieFiltered.release_year,
     });
     setSeeModal(true);
   }
@@ -48,8 +67,8 @@ useEffect(()=>{
           <CategoryCard
             filterToModal={filterToModal}
             title={index.title}
-            img={index.images['Poster Art'].url}
-            key={index.title}
+            img={index.img}
+            key={index.id}
           />
         ))}
         <Modal

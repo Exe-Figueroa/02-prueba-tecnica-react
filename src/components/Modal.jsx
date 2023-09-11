@@ -6,7 +6,7 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
 
   return (
     <>
-    <div className={seeModal && "blur"}></div>
+    <div className={seeModal ? "blur": null}></div>
     <div className={seeModal ? 'modal-container' : 'modal-container inactive'}>
       <span className='exit-btn'
       onClick={()=>setSeeModal(false)}
