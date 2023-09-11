@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
+
 import { CategoryCard } from "../components/CategoryCard";
 import "../styles/Home.css";
 

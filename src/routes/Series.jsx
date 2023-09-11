@@ -26,7 +26,7 @@ export function Series() {
       description: serieFiltered.description,
       releaseYear: serieFiltered.releaseYear,
     })
-    setSeeModal(true)
+    setSeeModal(true);
   }
 
   return (
@@ -34,7 +34,8 @@ export function Series() {
       {
         (!validator && error) && <Error />
       }
-      {(!validator && !error) && <Loader />
+      {
+        (!validator && !error) && <Loader />
       }
 
       {(validator && !error) && series.map(index => (
