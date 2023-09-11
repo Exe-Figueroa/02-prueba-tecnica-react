@@ -8,7 +8,7 @@ import "../styles/Series.css"
 
 export function Series() {
   const { error, validator, series } = useContext(DataContext);
-  const [seeModal, setSeeModal] = useState(false)
+  const [seeModal, setSeeModal] = useState(false);
   //Estado compuesto un objeto con propiedades no inicializadas
   const [modalState, setModalState] = useState({
     title: "",
