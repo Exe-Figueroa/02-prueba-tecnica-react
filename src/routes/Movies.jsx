@@ -1,14 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
-import { DataContext } from "../dataContext/DataContext";
-import { Modal } from "../components/Modal";
 
+import { Modal } from "../components/Modal";
+const API = 'http://localhost:3000/movies';
 import "../styles/Movie.css";
 
 export function Movies(props) {
-  const {error, validator, movies} = useContext(DataContext);
+  // el consumo de la API
+useEffect(()=>{
+  fetch(API)
+}, [])
+
   const [seeModal, setSeeModal] = useState(false);
 
   const [modalState, setModalState] = useState({
