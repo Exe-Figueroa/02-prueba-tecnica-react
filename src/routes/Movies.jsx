@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
-
 import { Modal } from "../components/Modal";
 
 import "../styles/Movie.css";
@@ -10,8 +9,9 @@ const API = 'http://localhost:3000/movies';
 
 export function Movies(props) {
   const [movies, setMovies] = useState([]);
-  const [ validator, setValidator ] = useState(false);
+  const [validator, setValidator] = useState(false);
   const [error, setError] = useState(false);
+  const [seeModal, setSeeModal] = useState(false);
 
   async function filterMovies(res) {
     const moviesData = await res.filter(item => (item.release_year >= 2010));
@@ -19,20 +19,19 @@ export function Movies(props) {
     setValidator(true);
     console.log(movies)
   }
-  useEffect(()=>{
+  useEffect(() => {
     fetch(API)
-    .then(res=>res.json())
-    .then(response=>{
-      filterMovies(response);
-    })
-    .catch(e=>{
-      console.error(e);
-      setError(true);
-    });
+      .then(res => res.json())
+      .then(response => {
+        filterMovies(response);
+      })
+      .catch(e => {
+        console.error(e);
+        setError(true);
+      });
 
   }, []);
 
-  const [seeModal, setSeeModal] = useState(false);
 
   const [modalState, setModalState] = useState({
     title: "",
@@ -43,7 +42,7 @@ export function Movies(props) {
 
   function filterToModal(title) {
     const movieFiltered = movies.find(movie => movie.title == title);
-    
+
     setModalState({
       title: movieFiltered.title,
       img: movieFiltered.img,
@@ -53,7 +52,7 @@ export function Movies(props) {
     setSeeModal(true);
   }
 
-  
+
   return (
     <div className={validator ? "movies-container" : "home-container"}>
       {
@@ -63,7 +62,7 @@ export function Movies(props) {
         (!validator && !error) && <Loader />
       }
       {
-        (validator && !error) && movies.map(index =>(
+        (validator && !error) && movies.map(index => (
           <CategoryCard
             filterToModal={filterToModal}
             title={index.title}
@@ -71,7 +70,7 @@ export function Movies(props) {
             key={index.id}
           />
         ))}
-        <Modal
+      <Modal
         seeModal={seeModal}
         setSeeModal={setSeeModal}
         title={modalState.title}
