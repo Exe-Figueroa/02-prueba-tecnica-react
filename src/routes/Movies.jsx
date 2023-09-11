@@ -1,14 +1,37 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
-import { DataContext } from "../dataContext/DataContext";
+
 import { Modal } from "../components/Modal";
 
 import "../styles/Movie.css";
+const API = 'http://localhost:3000/movies';
 
 export function Movies(props) {
-  const {error, validator, movies} = useContext(DataContext);
+  const [movies, setMovies] = useState([]);
+  const [ validator, setValidator ] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function filterMovies(res) {
+    const moviesData = await res.filter(item => (item.release_year >= 2010));
+    setMovies(moviesData);
+    setValidator(true);
+    console.log(movies)
+  }
+  useEffect(()=>{
+    fetch(API)
+    .then(res=>res.json())
+    .then(response=>{
+      filterMovies(response);
+    })
+    .catch(e=>{
+      console.error(e);
+      setError(true);
+    });
+
+  }, []);
+
   const [seeModal, setSeeModal] = useState(false);
 
   const [modalState, setModalState] = useState({
@@ -23,9 +46,9 @@ export function Movies(props) {
     
     setModalState({
       title: movieFiltered.title,
-      img: movieFiltered.images["Poster Art"].url,
+      img: movieFiltered.img,
       description: movieFiltered.description,
-      releaseYear: movieFiltered.releaseYear,
+      releaseYear: movieFiltered.release_year,
     });
     setSeeModal(true);
   }
@@ -44,8 +67,8 @@ export function Movies(props) {
           <CategoryCard
             filterToModal={filterToModal}
             title={index.title}
-            img={index.images['Poster Art'].url}
-            key={index.title}
+            img={index.img}
+            key={index.id}
           />
         ))}
         <Modal
