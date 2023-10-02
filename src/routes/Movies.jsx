@@ -6,24 +6,25 @@ import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 
 import "../styles/Movie.css";
-const API = 'http://localhost:3000/movies';
+const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
 export function Movies(props) {
   const [movies, setMovies] = useState([]);
   const [ validator, setValidator ] = useState(false);
   const [error, setError] = useState(false);
 
-  async function filterMovies(res) {
-    const moviesData = await res.filter(item => (item.release_year >= 2010));
-    setMovies(moviesData);
-    setValidator(true);
-    console.log(movies)
-  }
+  // async function filterMovies(res) {
+  //   const moviesData = await res.filter(item => (item.release_year >= 2010));
+  //   setMovies(moviesData);
+  //   setValidator(true);
+  //   console.log(movies)
+  // }
   useEffect(()=>{
     fetch(API)
     .then(res=>res.json())
     .then(response=>{
-      filterMovies(response);
+      console.log(response);
+      // filterMovies(response);
     })
     .catch(e=>{
       console.error(e);
