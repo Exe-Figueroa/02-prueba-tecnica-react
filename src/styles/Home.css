@@ -7,7 +7,29 @@
   align-items: center;
 }
 
+.home-add{
+  position: fixed;
+  right: 20px;
+  bottom: 290px;
+  font-size: 40px;
+  font-weight: bolder;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.9s ease;
+}
 
+/* Estilo del botón cuando el cursor está sobre él */
+.home-add:hover {
+  background-color: #0D4491;
+  
+}
+
+ 
 @media (min-width: 678px) {
   .home-container{
     height: calc(100vh - 370px);
