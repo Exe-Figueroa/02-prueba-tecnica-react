@@ -4,33 +4,65 @@ import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 
+
 import "../styles/Movie.css";
 const API = 'http://localhost:3000/movies';
 
 export function Movies(props) {
-  const [movies, setMovies] = useState([]);
-  const [validator, setValidator] = useState(false);
+  const moviesData = [
+    {
+      id: 1,
+      title: "peli 1",
+      img: "url",
+      description: "lremapdmapiwndansdoasnasidnasindoaisd",
+      releaseYear: 2023,
+    },
+    {
+      id: 2,
+      title: "peli 2",
+      img: "",
+      description: "lalalala",
+      releaseYear: 2022,
+    },
+    {
+      id: 3,
+      title: "peli 3",
+      img: "",
+      description: "ajgjajg",
+      releaseYear: 2021,
+    },
+    {
+      id: 4,
+      title: "peli 4",
+      img: "",
+      description: "laldaf",
+      releaseYear: 2020,
+    },
+  ]
+  const [movies, setMovies] = useState(moviesData);
+  const [validator, setValidator] = useState(true);
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
 
   async function filterMovies(res) {
+    setValidator(true);
     const moviesData = await res.filter(item => (item.release_year >= 2010));
     setMovies(moviesData);
-    setValidator(true);
     console.log(movies)
   }
-  useEffect(() => {
-    fetch(API)
-      .then(res => res.json())
-      .then(response => {
-        filterMovies(response);
-      })
-      .catch(e => {
-        console.error(e);
-        setError(true);
-      });
+  // useEffect(() => {
+  //   fetch(API)
+  //     .then(res => res.json())
+  //     .then(response => {
+  //       filterMovies(response);
+  //     })
+  //     .catch(e => {
+  //       filterMovies(moviesData)
+  //       console.error(e);
+  //       // setError(true);
+  //     });
 
-  }, []);
+  // }, []);
 
 
   const [modalState, setModalState] = useState({

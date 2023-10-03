@@ -5,24 +5,27 @@ import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import "../styles/Series.css"
 
-const API = "http://localhost:3000/series";
+const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
 export function Series() {
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false)
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
 
-  function filterSeries(res) {
+  /* function filterSeries(res) {
     const seriesData = res.filter(item => (item.release_year >= 2010)).slice(0, 20);
     setSeries(seriesData);
     setValidator(true);
   }
-
+ */
   useEffect(() => {
     fetch(API)
       .then(res => res.json())
       .then(response => {
-        filterSeries(response)
+        /* filterSeries(response)*/
+        setSeries(response)
+        console.log(series)
+        setValidator(true)
       })
       .catch(e => {
         console.error(e);

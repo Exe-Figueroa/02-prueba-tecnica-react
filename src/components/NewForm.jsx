@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import "../styles/NewForm.css";
 
 export function NewForm() {
   const [titleData, setTitleData] = useState({
     category: '',
     title: '',
-    year:'',
+    year: '',
     description: '',
-    img: '',    
+    img: '',
   });
 
   const handleChange = (event) => {
@@ -38,38 +39,49 @@ export function NewForm() {
   };
 
   return (
-    <div>
-      <h2><input type="" />Categoría</h2>
 
-
-      <form onSubmit={handleSubmit}>
-        <label>
-          Título:
-          <input
-            type="text"
-            name="title"
-            value={titleData.title}
-            onChange={handleChange}
-            required
-          />
-          <input 
+    <form className='new-form' onSubmit={handleSubmit}>
+      <select className='new-form-select'>
+        <option value="Categories" selected>Categories</option>
+        <option value="Series">Series</option>
+        <option value="Movies">Movies</option>
+      </select>
+      <label className='new-form-label'>
+        Title:
+        <input
+          type="text"
+          name="title"
+          placeholder='Title'
+        />
+      </label>
+      <label>
+        Description:
+        <input
           type="text"
           name="Description"
-          />
-          <input 
-          type="number"
-          name="year" 
-           />
-           <input 
-           type="text"
-           name='IMG'
-           url= ''
-            />
-        </label>
-        {/* Agrega más campos de entrada aquí según tus necesidades */}
-        <button type="submit">Agregar Título</button>
-      </form>
-    </div>
+          placeholder='Description'
+        />
+      </label>
+      <label>
+        Release Year:
+        <input
+          type="date"
+          name="year"
+          placeholder='Realease Year'
+        />
+      </label>
+      <label>
+        Url img:
+        <input
+          type="text"
+          name='IMG'
+          url=''
+          placeholder='Url img'
+        /></label>
+
+      <button type="submit">Send</button>
+    </form>
+
   );
 }
 
