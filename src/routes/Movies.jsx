@@ -3,7 +3,7 @@ import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
-import { moviesData } from "../export";
+
 
 import "../styles/Movie.css";
 const API = 'http://localhost:3000/movies';
