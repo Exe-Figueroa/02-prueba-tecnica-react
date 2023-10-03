@@ -1,0 +1,16 @@
+.new-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  background: #0D4491;
+  gap: 5px;
+}
+
+.new-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #fff;
+  font-size: 1.2rem;
+}

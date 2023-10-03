@@ -10,21 +10,21 @@ const imgSeries = "https://www.latercera.com/resizer/gXOdyP_YUsjQ2MC6U9sUOv-gRxk
 
 
 export function Home() {
-  
-    const[isOpen, setIsOpen] = useState(false);
 
-    const toggleForm = ()=>{
-      setIsOpen(!isOpen)
-    };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleForm = () => {
+    setIsOpen(!isOpen)
+  };
 
   return (
     <div className="home-container">
       <CategoryCard img={imgSeries} title={"Popular Series"} name={"SERIES"} />
       <CategoryCard img={imgMovies} title={"Popular Movies"} name={"MOVIES"} />
       <button className="home-add"
-      onClick={ () =>toggleForm() }>+</button> 
-      {isOpen && <NewForm />}               
-    </div>     
+        onClick={() => toggleForm()}>+</button>
+      {isOpen && <NewForm />}
+    </div>
   );
 
 }
