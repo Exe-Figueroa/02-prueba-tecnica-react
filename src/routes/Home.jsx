@@ -12,6 +12,7 @@ export function Home() {
     <div className="home-container">
       <CategoryCard img={imgSeries} title={"Popular Series"} name={"SERIES"} />
       <CategoryCard img={imgMovies} title={"Popular Movies"} name={"MOVIES"} />
+      <button>+</button>
     </div>
   );
 
