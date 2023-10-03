@@ -20,7 +20,7 @@ export function Series() {
 
   useEffect(() => {
     fetch(API)
-      .then(res => console.log(res))
+      .then(res => res.json())
       .then(response => {
         filterSeries(response)
       })
