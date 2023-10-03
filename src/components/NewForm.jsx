@@ -47,17 +47,14 @@ export function NewForm() {
           Título:
           <input
             type="text"
-            name="title"
-            value={titleData.title}
-            onChange={handleChange}
-            required
+            name="title"            
           />
           <input 
           type="text"
           name="Description"
           />
           <input 
-          type="number"
+          type="date"
           name="year" 
            />
            <input 
@@ -67,6 +64,7 @@ export function NewForm() {
             />
         </label>
         {/* Agrega más campos de entrada aquí según tus necesidades */}
+        
         <button type="submit">Agregar Título</button>
       </form>
     </div>
