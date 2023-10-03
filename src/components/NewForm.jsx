@@ -39,7 +39,9 @@ export function NewForm() {
 
   return (
     <div>
-      <h2>Agregar Nuevo Título</h2>
+      <h2><input type="" />Categoría</h2>
+
+
       <form onSubmit={handleSubmit}>
         <label>
           Título:
@@ -50,6 +52,19 @@ export function NewForm() {
             onChange={handleChange}
             required
           />
+          <input 
+          type="text"
+          name="Description"
+          />
+          <input 
+          type="number"
+          name="year" 
+           />
+           <input 
+           type="text"
+           name='IMG'
+           url= ''
+            />
         </label>
         {/* Agrega más campos de entrada aquí según tus necesidades */}
         <button type="submit">Agregar Título</button>
