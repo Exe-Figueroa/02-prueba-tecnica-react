@@ -12,20 +12,13 @@ export function Series() {
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
 
-  /* function filterSeries(res) {
-    const seriesData = res.filter(item => (item.release_year >= 2010)).slice(0, 20);
-    setSeries(seriesData);
-    setValidator(true);
-  }
- */
   useEffect(() => {
     fetch(API)
       .then(res => res.json())
       .then(response => {
-        /* filterSeries(response)*/
         setSeries(response)
-        console.log(series)
         setValidator(true)
+        console.log(response)
       })
       .catch(e => {
         console.error(e);

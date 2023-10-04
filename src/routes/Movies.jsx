@@ -6,7 +6,7 @@ import { Modal } from "../components/Modal";
 
 
 import "../styles/Movie.css";
-const API = 'http://localhost:3000/movies';
+const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
 export function Movies(props) {
   const moviesData = [
@@ -44,25 +44,21 @@ export function Movies(props) {
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
 
-  async function filterMovies(res) {
-    setValidator(true);
-    const moviesData = await res.filter(item => (item.release_year >= 2010));
-    setMovies(moviesData);
-    console.log(movies)
-  }
-  // useEffect(() => {
-  //   fetch(API)
-  //     .then(res => res.json())
-  //     .then(response => {
-  //       filterMovies(response);
-  //     })
-  //     .catch(e => {
-  //       filterMovies(moviesData)
-  //       console.error(e);
-  //       // setError(true);
-  //     });
 
-  // }, []);
+  useEffect(() => {
+    fetch(API)
+      .then(res => res.json())
+      .then(response => {
+        setMovies(response)
+        setValidator(true);
+        console.log(response)
+      })
+      .catch(e => {
+        console.error(e);
+        setError(true);
+      });
+
+  }, []);
 
 
   const [modalState, setModalState] = useState({
@@ -70,6 +66,8 @@ export function Movies(props) {
     img: "",
     description: "",
     releaseYear: 0,
+    id: null,
+    category: null
   });
 
   function filterToModal(title) {
@@ -80,7 +78,10 @@ export function Movies(props) {
       img: movieFiltered.img,
       description: movieFiltered.description,
       releaseYear: movieFiltered.release_year,
+      id: movieFiltered.id,
+      category: movieFiltered.category
     });
+    console.log(modalState)
     setSeeModal(true);
   }
 
@@ -109,6 +110,8 @@ export function Movies(props) {
         img={modalState.img}
         description={modalState.description}
         releaseYear={modalState.releaseYear}
+        id={modalState.id}
+        category={modalState.category}
       />
     </div>
   );

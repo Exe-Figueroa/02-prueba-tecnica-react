@@ -39,6 +39,7 @@
   text-align: center;
   line-height: 40px;
   border-radius: 12px;
+  border: none;
 }
 
 .modal-container.inactive {
