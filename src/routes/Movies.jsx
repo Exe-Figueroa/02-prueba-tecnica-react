@@ -66,6 +66,8 @@ export function Movies(props) {
     img: "",
     description: "",
     releaseYear: 0,
+    id: null,
+    category: null
   });
 
   function filterToModal(title) {
@@ -76,7 +78,10 @@ export function Movies(props) {
       img: movieFiltered.img,
       description: movieFiltered.description,
       releaseYear: movieFiltered.release_year,
+      id: movieFiltered.id,
+      category: movieFiltered.category
     });
+    console.log(modalState)
     setSeeModal(true);
   }
 
@@ -105,6 +110,8 @@ export function Movies(props) {
         img={modalState.img}
         description={modalState.description}
         releaseYear={modalState.releaseYear}
+        id={modalState.id}
+        category={modalState.category}
       />
     </div>
   );

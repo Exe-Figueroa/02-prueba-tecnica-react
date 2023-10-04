@@ -3,7 +3,21 @@ import React from 'react'
 import "../styles/Modal.css"
 
 
-export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal }) {
+export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category }) {
+  async function deleteItem() {
+    const API = `https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${category}/${id}`;
+    try {
+      const res = await fetch(API, {
+        method: 'DELETE'
+      });
+      const data = await res.json()
+      console.log(data)
+      location.reload()
+      
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -23,9 +37,9 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
         </div>
         <p className='modal-container-text'>{description}</p>
         <div className="bottons">
-          <p className='bottons-btn-edit'>Editar</p>
+          <button className='bottons-btn-edit'>Editar</button>
 
-          <p className="bottons-btn-delete" >Eliminar</p>
+          <button className="bottons-btn-delete" onClick={() => deleteItem()} >Eliminar</button>
         </div>
       </div>
 
