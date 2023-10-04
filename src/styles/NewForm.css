@@ -5,12 +5,51 @@
   border-radius: 10px;
   background: #0D4491;
   gap: 5px;
+  position: fixed;
+  width: 650px;
+  height: 400px;
+  padding: 20px;
+
+}
+
+.new-form-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-form-container select {
+  margin-top: 10px;
+  height: 25px;
 }
 
 .new-form label {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 3px;
   color: #fff;
   font-size: 1.2rem;
+}
+
+.new-form input {
+  height: 30px;
+}
+
+.new-form-container button {
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  height: 30px;
+  margin-top: 35px;
+  align-self: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #3498db;
+}
+
+.new-form-container button:hover {
+  border: 2px solid #ededf8;
 }

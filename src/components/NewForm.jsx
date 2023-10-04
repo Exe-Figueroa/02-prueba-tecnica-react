@@ -41,45 +41,47 @@ export function NewForm() {
   return (
 
     <form className='new-form' onSubmit={handleSubmit}>
-      <select className='new-form-select'>
-        <option value="Categories" selected>Categories</option>
-        <option value="Series">Series</option>
-        <option value="Movies">Movies</option>
-      </select>
-      <label className='new-form-label'>
-        Title:
-        <input
-          type="text"
-          name="title"
-          placeholder='Title'
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          type="text"
-          name="Description"
-          placeholder='Description'
-        />
-      </label>
-      <label>
-        Release Year:
-        <input
-          type="date"
-          name="year"
-          placeholder='Realease Year'
-        />
-      </label>
-      <label>
-        Url img:
-        <input
-          type="text"
-          name='IMG'
-          url=''
-          placeholder='Url img'
-        /></label>
+      <div className='new-form-container'>
+        <select className='new-form-select'>
+          <option value="Categories" selected>Categories</option>
+          <option value="Series">Series</option>
+          <option value="Movies">Movies</option>
+        </select>
+        <label className='new-form-label'>
+          Title:
+          <input
+            type="text"
+            name="title"
+            placeholder='Title'
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            type="text"
+            name="Description"
+            placeholder='Description'
+          />
+        </label>
+        <label>
+          Release Year:
+          <input
+            type="number"
+            name="year"
+            placeholder='Release Year'
+          />
+        </label>
+        <label>
+          Url img:
+          <input
+            type="text"
+            name='IMG'
+            url=''
+            placeholder='Url img'
+          /></label>
 
-      <button type="submit">Send</button>
+        <button type="submit">Send</button>
+      </div>
     </form>
 
   );
