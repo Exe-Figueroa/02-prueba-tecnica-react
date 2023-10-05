@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
-
+import { EditForm } from "../components/EditForm";
 
 import "../styles/Movie.css";
 const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
 export function Movies(props) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const moviesData = [
     {
       id: 1,
@@ -43,7 +46,19 @@ export function Movies(props) {
   const [validator, setValidator] = useState(true);
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
+  const [modalState, setModalState] = useState({
+    title: "",
+    img: "",
+    description: "",
+    releaseYear: 0,
+    id: null,
+    category: null
+  });
 
+  const toggleForm = () => {
+    setIsOpen(!isOpen);
+    setSeeModal(false);
+  };
 
   useEffect(() => {
     fetch(API)
@@ -61,14 +76,6 @@ export function Movies(props) {
   }, []);
 
 
-  const [modalState, setModalState] = useState({
-    title: "",
-    img: "",
-    description: "",
-    releaseYear: 0,
-    id: null,
-    category: null
-  });
 
   function filterToModal(title) {
     const movieFiltered = movies.find(movie => movie.title == title);
@@ -112,7 +119,12 @@ export function Movies(props) {
         releaseYear={modalState.releaseYear}
         id={modalState.id}
         category={modalState.category}
+        toggleForm={toggleForm}
       />
+      {isOpen &&
+        <EditForm
+          modalState={modalState}
+        />}
     </div>
   );
 }
