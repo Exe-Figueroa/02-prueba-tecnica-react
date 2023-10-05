@@ -18,31 +18,30 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
       console.error(error)
     }
   }
-
   return (
     <>
       <div className={seeModal ? "blur" : null}></div>
       <div className={seeModal ? 'modal-container' : 'modal-container inactive'}>
-        <span className='exit-btn'
-          onClick={() => setSeeModal(false)}
-        >
-          x
-        </span>
-        <div className='modal-container-card'>
-          <img className="modal-container-img" src={img} alt="" />
-          <div className='modal-container-title'>
-            <h2 >{title}</h2>
-            <span>{releaseYear}</span>
+        <section className='modal-container-contend'>
+          <button className='bottons-btn-exit'
+            onClick={() => setSeeModal(false)}
+          >
+            x
+          </button>
+          <div className='modal-container-card'>
+            <img className="modal-container-img" src={img} alt="" />
+            <div className='modal-container-title'>
+              <h2 >{title}</h2>
+              <span>{releaseYear}</span>
+            </div>
           </div>
-        </div>
-        <p className='modal-container-text'>{description}</p>
-        <div className="bottons">
+          <p className='modal-container-text'>{description}</p>
           <button className='bottons-btn-edit'>Editar</button>
-
           <button className="bottons-btn-delete" onClick={() => deleteItem()} >Eliminar</button>
-        </div>
+        </section>
       </div>
 
     </>
   )
 }
+

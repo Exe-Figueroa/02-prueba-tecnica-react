@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
 export function NewForm() {
+
   const [formData, setFormData] = useState({
     category: '',
     title: '',
@@ -9,9 +10,9 @@ export function NewForm() {
     description: '',
     img: '',
   });
-  const handleChangeSelect = (e)=>{
-    const {value} = e.target;
-    setFormData({...formData, category: value});
+  const handleChangeSelect = (e) => {
+    const { value } = e.target;
+    setFormData({ ...formData, category: value });
   }
   const handleChange = (event) => {
     const { name, value } = event.target;
