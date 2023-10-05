@@ -27,24 +27,24 @@ export function NewForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('submit')
-    // try {
-    //   const response = await fetch('/ruta-del-backend-para-agregar-titulo', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
+    try {
+      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${formData.category}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    //   if (response.ok) {
-    //     alert('Título agregado exitosamente');
-    //     // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
-    //   } else {
-    //     alert('Hubo un error al agregar el título.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error al enviar el título:', error);
-    // }
+      if (response.ok) {
+        alert('Título agregado exitosamente');
+        // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
+      } else {
+        alert('Hubo un error al agregar el título.');
+      }
+    } catch (error) {
+      console.error('Error al enviar el título:', error);
+    }
   };
 
   return (
