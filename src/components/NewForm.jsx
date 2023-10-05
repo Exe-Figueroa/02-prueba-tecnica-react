@@ -5,7 +5,7 @@ export function NewForm() {
   const [titleData, setTitleData] = useState({
     category: '',
     title: '',
-    year: '',
+    releaseyear: '',
     description: '',
     img: '',
   });
