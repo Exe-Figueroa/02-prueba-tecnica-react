@@ -26,7 +26,7 @@ export function NewForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log()
+    console.log('submit')
     // try {
     //   const response = await fetch('/ruta-del-backend-para-agregar-titulo', {
     //     method: 'POST',
@@ -51,12 +51,13 @@ export function NewForm() {
 
     <form className='new-form' onSubmit={handleSubmit}>
       <div className='new-form-container'>
+        <span>Categories</span>
         <select
           className='new-form-select'
           defaultValue="Categories"
           onChange={(e) => handleChangeSelect(e)}
         >
-          <option>Categories</option>
+          {/* <option>Categories</option> */}
           <option name="series" value="series">Series</option>
           <option name="movies" value="movies">Movies</option>
         </select>
