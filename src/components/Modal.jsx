@@ -12,8 +12,8 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
       });
       const data = await res.json()
       console.log(data)
-      location.reload()
-      
+      // location.reload()
+      alert('Se eliminó correctamente')
     } catch (error) {
       console.error(error)
     }
