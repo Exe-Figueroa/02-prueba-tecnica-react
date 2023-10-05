@@ -2,50 +2,63 @@ import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
 export function NewForm() {
-  const [titleData, setTitleData] = useState({
+  const [formData, setFormData] = useState({
     category: '',
     title: '',
-    year: '',
+    releaseYear: '',
     description: '',
     img: '',
   });
-
+  const handleChangeSelect = (e)=>{
+    const {value} = e.target;
+    setFormData({...formData, category: value});
+  }
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setTitleData({ ...titleData, [name]: value });
+    console.log({ name, value })
+    if (name === "releaseYear") {
+      setFormData({ ...formData, [name]: Number(value) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    };
+    console.log(formData)
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log()
+    // try {
+    //   const response = await fetch('/ruta-del-backend-para-agregar-titulo', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
 
-    try {
-      const response = await fetch('/ruta-del-backend-para-agregar-titulo', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(titleData),
-      });
-
-      if (response.ok) {
-        alert('Título agregado exitosamente');
-        // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
-      } else {
-        alert('Hubo un error al agregar el título.');
-      }
-    } catch (error) {
-      console.error('Error al enviar el título:', error);
-    }
+    //   if (response.ok) {
+    //     alert('Título agregado exitosamente');
+    //     // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
+    //   } else {
+    //     alert('Hubo un error al agregar el título.');
+    //   }
+    // } catch (error) {
+    //   console.error('Error al enviar el título:', error);
+    // }
   };
 
   return (
 
     <form className='new-form' onSubmit={handleSubmit}>
       <div className='new-form-container'>
-        <select className='new-form-select'>
-          <option value="Categories" selected>Categories</option>
-          <option value="Series">Series</option>
-          <option value="Movies">Movies</option>
+        <select
+          className='new-form-select'
+          defaultValue="Categories"
+          onChange={(e) => handleChangeSelect(e)}
+        >
+          <option>Categories</option>
+          <option name="series" value="series">Series</option>
+          <option name="movies" value="movies">Movies</option>
         </select>
         <label className='new-form-label'>
           Title:
@@ -53,31 +66,35 @@ export function NewForm() {
             type="text"
             name="title"
             placeholder='Title'
+            onChange={(e) => handleChange(e)}
           />
         </label>
         <label>
           Description:
           <input
             type="text"
-            name="Description"
+            name="description"
             placeholder='Description'
+            onChange={(e) => handleChange(e)}
           />
         </label>
         <label>
           Release Year:
           <input
             type="number"
-            name="year"
+            name="releaseYear"
             placeholder='Release Year'
+            onChange={(e) => handleChange(e)}
           />
         </label>
         <label>
           Url img:
           <input
             type="text"
-            name='IMG'
+            name='img'
             url=''
             placeholder='Url img'
+            onChange={(e) => handleChange(e)}
           /></label>
 
         <button type="submit">Send</button>
