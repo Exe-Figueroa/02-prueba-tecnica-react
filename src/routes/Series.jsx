@@ -33,6 +33,8 @@ export function Series() {
     img: "",
     description: "",
     releaseYear: 0,
+    id: null,
+    category: null,
   });
 
   function filterToModal(title) {
@@ -43,6 +45,8 @@ export function Series() {
       img: serieFiltered.img,
       description: serieFiltered.description,
       releaseYear: serieFiltered.release_year,
+      id: serieFiltered.id,
+      category: serieFiltered.category,
     })
     setSeeModal(true);
   }
@@ -71,6 +75,8 @@ export function Series() {
         img={modalState.img}
         description={modalState.description}
         releaseYear={modalState.releaseYear}
+        id={modalState.id}
+        category={modalState.category}
       />
 
     </div>
