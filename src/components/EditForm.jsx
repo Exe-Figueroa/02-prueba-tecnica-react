@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
-export function NewForm({ modalState }) {
+export function EditForm({modalState}) {
   const [formData, setFormData] = useState({
-    category: '',
-    title: '',
-    releaseYear: '',
-    description: '',
-    img: '',
+    title: modalState.title,
+    releaseYear: modalState.releaseYear,
+    description: modalState.description,
+    img: modalState.img,
   });
-  const handleChangeSelect = (e) => {
-    const { value } = e.target;
-    setFormData({ ...formData, category: value });
-  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     console.log({ name, value })
@@ -28,8 +24,8 @@ export function NewForm({ modalState }) {
     event.preventDefault();
     console.log('submit')
     try {
-      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${formData.category}`, {
-        method: 'POST',
+      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${modalState.category}/${modalState.id}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -38,12 +34,11 @@ export function NewForm({ modalState }) {
 
       if (response.ok) {
         alert('Título agregado exitosamente');
-        // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
       } else {
         alert('Hubo un error al agregar el título.');
       }
     } catch (error) {
-      console.error('Error al enviar el título:', error);
+      console.error({ error});
     }
   };
 
@@ -51,19 +46,10 @@ export function NewForm({ modalState }) {
 
     <form className='new-form' onSubmit={handleSubmit}>
       <div className='new-form-container'>
-        <span>Categories</span>
-        <select
-          className='new-form-select'
-          defaultValue="Categories"
-          onChange={(e) => handleChangeSelect(e)}
-        >
-          {/* <option>Categories</option> */}
-          <option name="series" value="series">Series</option>
-          <option name="movies" value="movies">Movies</option>
-        </select>
         <label className='new-form-label'>
           Title:
           <input
+            value={formData.title}
             type="text"
             name="title"
             placeholder='Title'
@@ -73,6 +59,7 @@ export function NewForm({ modalState }) {
         <label>
           Description:
           <input
+            value={formData.description}
             type="text"
             name="description"
             placeholder='Description'
@@ -82,6 +69,7 @@ export function NewForm({ modalState }) {
         <label>
           Release Year:
           <input
+            value={formData.releaseYear}
             type="number"
             name="releaseYear"
             placeholder='Release Year'
@@ -91,6 +79,7 @@ export function NewForm({ modalState }) {
         <label>
           Url img:
           <input
+            value={formData.img}
             type="text"
             name='img'
             url=''

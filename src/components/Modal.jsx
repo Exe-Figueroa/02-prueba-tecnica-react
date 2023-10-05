@@ -3,7 +3,7 @@ import React from 'react'
 import "../styles/Modal.css"
 
 
-export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category }) {
+export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category, toggleForm }) {
   async function deleteItem() {
     const API = `https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${category}/${id}`;
     try {
@@ -34,13 +34,23 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
               <h2 >{title}</h2>
               <span>{releaseYear}</span>
             </div>
-          </div>
-          <p className='modal-container-text'>{description}</p>
-          <button className='bottons-btn-edit'>Editar</button>
-          <button className="bottons-btn-delete" onClick={() => deleteItem()} >Eliminar</button>
-        </section>
-      </div>
 
+          </div>
+        </section>
+
+        <p className='modal-container-text'>{description}</p>
+        <div className="bottons">
+          <button
+            className='bottons-btn-edit'
+            onClick={() => toggleForm()}
+          >Editar</button>
+
+          <button
+            className="bottons-btn-delete"
+            onClick={() => deleteItem()}
+          >Eliminar</button>
+        </div>
+      </div>
     </>
   )
 }
