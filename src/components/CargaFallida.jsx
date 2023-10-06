@@ -1,14 +1,15 @@
 import React from 'react';
 import '../styles/CargaFallida.css';
+import ImgCargaFallida from '../assets/wrong.png'
 
 export function CargaFallida() {
   return (
     <div className='alert-container'>
       <div className="loaded-alert">
-        <span className="alert-card">
+        <span className="wrong-alert-card">
          El archivo no pudo cargarse
         </span>
-        <img src="../assets/wrong.png" alt="LogoWrong" />
+        <img  className='wrong-img' src={ImgCargaFallida} alt="LogoWrong" />
         </div>
     </div>
   );

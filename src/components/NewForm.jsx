@@ -5,7 +5,7 @@ import "../styles/NewForm.css";
 
 export function NewForm({ setHandleRequest, toggleForm }) {
   const [formData, setFormData] = useState({
-    category: '',
+    category: 'series',
     title: '',
     releaseYear: '',
     description: '',

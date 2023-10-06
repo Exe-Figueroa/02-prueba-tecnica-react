@@ -31,6 +31,8 @@ export function Home() {
       {handlerRequest.failure && <CargaFallida />}
 
 
+
+
     </div>
   );
 
