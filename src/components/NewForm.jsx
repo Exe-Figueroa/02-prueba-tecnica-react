@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import "../styles/NewForm.css";
 
-export function NewForm() {
+
+export function NewForm({ setHandleRequest, toggleForm }) {
   const [formData, setFormData] = useState({
     category: '',
     title: '',
@@ -37,10 +39,17 @@ export function NewForm() {
       });
 
       if (response.ok) {
-        alert('Título agregado exitosamente');
-        // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
+        toggleForm();
+        setHandleRequest({ success: true });
+        setTimeout(() => {
+          setHandleRequest({ success: false });
+        }, 2000)
       } else {
-        alert('Hubo un error al agregar el título.');
+        toggleForm();
+        setHandleRequest({ failure: true });
+        setTimeout(() => {
+          setHandleRequest({ failure: false });
+        }, 2000)
       }
     } catch (error) {
       console.error('Error al enviar el título:', error);
@@ -50,11 +59,7 @@ export function NewForm() {
   return (
 
     <form className='new-form' onSubmit={handleSubmit}>
-      <button className='new-form-btn-exit' type="button"
-        onClick={() => setSeeModal(false)}
-      >
-        x
-      </button>
+      <button type='button' onClick={() => toggleForm()}>cerrar</button>
       <div className='new-form-container'>
         <span>Categories</span>
         <select
@@ -62,7 +67,6 @@ export function NewForm() {
           defaultValue="Categories"
           onChange={(e) => handleChangeSelect(e)}
         >
-          {/* <option>Categories</option> */}
           <option name="series" value="series">Series</option>
           <option name="movies" value="movies">Movies</option>
         </select>
