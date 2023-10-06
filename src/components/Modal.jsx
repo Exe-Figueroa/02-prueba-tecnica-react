@@ -38,13 +38,14 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
           </div>
         </section>
 
-        <p className='modal-container-text'>{description}</p>
+        <p className='modal-container-text'>{description}
+        </p>
+
         <div className="bottons">
           <button
             className='bottons-btn-edit'
             onClick={() => toggleForm()}
           >Editar</button>
-
           <button
             className="bottons-btn-delete"
             onClick={() => deleteItem()}

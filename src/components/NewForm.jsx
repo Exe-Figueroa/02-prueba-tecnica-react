@@ -50,6 +50,11 @@ export function NewForm({ modalState }) {
   return (
 
     <form className='new-form' onSubmit={handleSubmit}>
+      <button className='new-form-btn-exit' type="button"
+        onClick={() => setSeeModal(false)}
+      >
+        x
+      </button>
       <div className='new-form-container'>
         <span>Categories</span>
         <select

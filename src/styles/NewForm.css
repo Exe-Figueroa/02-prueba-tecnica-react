@@ -7,15 +7,34 @@
   gap: 5px;
   position: fixed;
   width: 650px;
-  height: 400px;
+  height: 500px;
   padding: 20px;
 
+}
+
+.new-form-btn-exit {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: #3498db;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: -60px;
 }
 
 .new-form-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+}
+
+span {
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .new-form-container select {
@@ -39,13 +58,14 @@
   border-radius: 10px;
   border: none;
   padding-left: 5px;
+
 }
 
 .new-form-container button {
   border: none;
   border-radius: 10px;
   width: 50%;
-  height: 30px;
+  height: 40px;
   margin-top: 35px;
   align-self: center;
   text-align: center;
