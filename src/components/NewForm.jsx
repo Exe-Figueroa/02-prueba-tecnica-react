@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { CargaExitosa } from './CargaExitosa';
-import { CargaFallida } from './CargaFallida';
 
 import "../styles/NewForm.css";
 
 
-export function NewForm({modalState}) {
+export function NewForm({ setHandleRequest, toggleForm}) {
   const [formData, setFormData] = useState({
     category: '',
     title: '',
@@ -41,10 +39,17 @@ export function NewForm({modalState}) {
       });
 
       if (response.ok) {
-        ;
-        // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
+        toggleForm();
+        setHandleRequest({success : true});
+        setTimeout(()=>{
+          setHandleRequest({success: false});
+        }, 2000)
       } else {
-        ;
+        toggleForm();
+        setHandleRequest({failure : true});
+        setTimeout(()=>{
+          setHandleRequest({failure: false});
+        }, 2000)
       }
     } catch (error) {
       console.error('Error al enviar el título:', error);
@@ -54,6 +59,7 @@ export function NewForm({modalState}) {
   return (
 
     <form className='new-form' onSubmit={handleSubmit}>
+      <button type='button' onClick={()=> toggleForm()}>cerrar</button>
       <div className='new-form-container'>
         <span>Categories</span>
         <select
@@ -61,7 +67,6 @@ export function NewForm({modalState}) {
           defaultValue="Categories"
           onChange={(e) => handleChangeSelect(e)}
         >
-          {/* <option>Categories</option> */}
           <option name="series" value="series">Series</option>
           <option name="movies" value="movies">Movies</option>
         </select>
