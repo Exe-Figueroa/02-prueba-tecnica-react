@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/CargaExitosa.css';
+import ImgCargaExitosa from '../assets/ok-logo-grass.png'
 
 export function CargaExitosa() {
   return (
@@ -8,7 +9,7 @@ export function CargaExitosa() {
         <span className="alert-card">
          El archivo ha sido cargado exitosamente
         </span>
-        <img src="../assets/ok-logo-grass.png" alt="LogoOk" />
+        <img className='ok-img' src={ImgCargaExitosa} alt="LogoOk" />
         </div>
     </div>
   );
