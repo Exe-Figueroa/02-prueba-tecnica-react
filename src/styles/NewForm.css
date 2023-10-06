@@ -1,13 +1,13 @@
 .new-form {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   background: #0D4491;
   gap: 5px;
   position: fixed;
-  width: 650px;
-  height: 500px;
+  width: 260px;
+  height: 470px;
   padding: 20px;
 
 }
@@ -77,4 +77,12 @@ span {
 
 .new-form-container button:hover {
   border: 2px solid #ededf8;
+}
+
+@media (min-width: 768px) {
+  .new-form {
+    width: 650px;
+    height: 500px;
+    padding: 20px;
+  }
 }

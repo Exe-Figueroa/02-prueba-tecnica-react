@@ -5,7 +5,6 @@ footer {
   background: linear-gradient(to bottom, #0D4491 0%, #2388CB 100%, #114444 100%);
   color: white;
   font-family: Roboto, sans-serif;
-
 }
 
 .footer-container {
@@ -13,6 +12,8 @@ footer {
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+  margin-top: 327px;
+
 }
 
 .footer-container-ul {
@@ -21,7 +22,7 @@ footer {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  font-size: 1.1rem;
+  font-size: 1.rem;
   font-weight: 400;
   list-style: none;
   justify-content: center;
@@ -39,7 +40,7 @@ footer {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .footer-container-icons-social {
@@ -54,30 +55,32 @@ footer {
 }
 
 .footer-container-icons-social img {
-  width: 40px;
-  height: 50px;
+  width: 30px;
+  height: 40px;
 }
 
 .footer-container-icons-store img {
-  width: 130px;
-  height: 70px;
+  width: 100px;
+  height: 50px;
+
 }
 
 @media (min-width: 768px) {
   .footer-container {
     padding: 0 50px;
     height: 300px;
+    margin-top: auto;
 
   }
 
   .footer-container-ul {
     flex-direction: row;
-    font-size: 1.5rem;
+    font-size: 1rem;
     justify-content: flex-start;
   }
 
   .footer-container-p {
-    font-size: 1.4rem;
+    font-size: 1rem;
     text-align: start;
     margin-left: 15px;
   }
@@ -87,11 +90,9 @@ footer {
     justify-content: space-between;
   }
 
-  .footer-container-icons-social {}
-
   .footer-container-icons-social img {
-    width: 60px;
-    height: 70px;
+    width: 40px;
+    height: 50px;
   }
 
   .footer-container-icons-store {
@@ -101,7 +102,7 @@ footer {
   }
 
   .footer-container-icons-store img {
-    width: 180px;
-    height: 200px;
+    width: 100px;
+    height: 90px;
   }
 }

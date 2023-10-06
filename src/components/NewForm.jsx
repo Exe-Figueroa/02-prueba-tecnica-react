@@ -57,9 +57,10 @@ export function NewForm({ setHandleRequest, toggleForm }) {
   };
 
   return (
-
     <form className='new-form' onSubmit={handleSubmit}>
-      <button type='button' onClick={() => toggleForm()}>cerrar</button>
+      <button className='new-form-btn-exit'
+        type='button' onClick={() => toggleForm()}>
+        x</button>
       <div className='new-form-container'>
         <span>Categories</span>
         <select

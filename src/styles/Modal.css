@@ -40,11 +40,10 @@
 
 .modal-container-contend {
   display: flex;
-
 }
 
 .modal-container.inactive {
-  transform: translateY(100%);
+  transform: translateY(200%);
 }
 
 .modal-container-card {
@@ -111,16 +110,16 @@
   color: white
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .modal-container {
     flex-direction: row;
     width: 850px;
-    bottom: 50%;
-    transform: translateY(50%);
+    bottom: 85%;
+    transform: translateY(100%);
   }
 
   .modal-container.inactive {
-    transform: translateY(200%);
+    transform: translateY(300%);
   }
 
   .modal-container-card {

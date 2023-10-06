@@ -27,10 +27,8 @@ export function Home() {
       <button className="home-add"
         onClick={() => toggleForm()}>+</button>
       {isOpen && <NewForm setHandleRequest={setHandleRequest} toggleForm={toggleForm} />}
-      {/* {handlerRequest.success && <CargaExitosa />} */}
-      {/* {handlerRequest.failure && <CargaFallida />} */}
-      <CargaExitosa />
-      <CargaFallida />
+      {handlerRequest.success && <CargaExitosa />}
+      {handlerRequest.failure && <CargaFallida />}
 
 
     </div>
