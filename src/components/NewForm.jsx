@@ -14,6 +14,7 @@ export function NewForm({ setHandleRequest, toggleForm}) {
   const handleChangeSelect = (e)=>{
     const {value} = e.target;
     setFormData({...formData, category: value});
+  };
   const handleChange = (event) => {
     const { name, value } = event.target;
     console.log({ name, value })
