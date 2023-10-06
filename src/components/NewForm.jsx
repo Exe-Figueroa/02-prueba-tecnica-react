@@ -5,7 +5,7 @@ import "../styles/NewForm.css";
 
 export function NewForm({ setHandleRequest, toggleForm}) {
   const [formData, setFormData] = useState({
-    category: '',
+    category: 'series',
     title: '',
     releaseYear: '',
     description: '',
@@ -14,7 +14,6 @@ export function NewForm({ setHandleRequest, toggleForm}) {
   const handleChangeSelect = (e)=>{
     const {value} = e.target;
     setFormData({...formData, category: value});
-  };
   const handleChange = (event) => {
     const { name, value } = event.target;
     console.log({ name, value })

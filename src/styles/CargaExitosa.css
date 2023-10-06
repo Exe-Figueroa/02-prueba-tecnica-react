@@ -1,0 +1,30 @@
+.alert-container{
+    width:400px;
+    height: 100px;
+    background-color: rgb(61, 98, 166);
+    border-radius: 10px;
+    position: fixed;
+    /*-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+*/
+}
+
+.loaded-alert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-card{
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.ok-img{
+    width:35px;
+    height: auto;
+    margin-top: 15px;
+}
