@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
 
-export function NewForm({ setHandleRequest, toggleForm}) {
+export function NewForm({ setHandleRequest, toggleForm }) {
   const [formData, setFormData] = useState({
     category: 'series',
     title: '',
@@ -11,9 +11,9 @@ export function NewForm({ setHandleRequest, toggleForm}) {
     description: '',
     img: '',
   });
-  const handleChangeSelect = (e)=>{
-    const {value} = e.target;
-    setFormData({...formData, category: value});
+  const handleChangeSelect = (e) => {
+    const { value } = e.target;
+    setFormData({ ...formData, category: value });
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,15 +40,15 @@ export function NewForm({ setHandleRequest, toggleForm}) {
 
       if (response.ok) {
         toggleForm();
-        setHandleRequest({success : true});
-        setTimeout(()=>{
-          setHandleRequest({success: false});
+        setHandleRequest({ success: true });
+        setTimeout(() => {
+          setHandleRequest({ success: false });
         }, 2000)
       } else {
         toggleForm();
-        setHandleRequest({failure : true});
-        setTimeout(()=>{
-          setHandleRequest({failure: false});
+        setHandleRequest({ failure: true });
+        setTimeout(() => {
+          setHandleRequest({ failure: false });
         }, 2000)
       }
     } catch (error) {
@@ -57,9 +57,10 @@ export function NewForm({ setHandleRequest, toggleForm}) {
   };
 
   return (
-
     <form className='new-form' onSubmit={handleSubmit}>
-      <button type='button' onClick={()=> toggleForm()}>cerrar</button>
+      <button className='new-form-btn-exit'
+        type='button' onClick={() => toggleForm()}>
+        x</button>
       <div className='new-form-container'>
         <span>Categories</span>
         <select

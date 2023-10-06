@@ -4,13 +4,29 @@ import { Modal } from "../components/Modal";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import "../styles/Series.css"
+import { EditForm } from "../components/EditForm";
 
 const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
-export function Series() {
+
+export function Series(props) {
+  const [isOpen, setIsOpen] = useState(false);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false)
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
+  const [modalState, setModalState] = useState({
+    title: "",
+    img: "",
+    description: "",
+    releaseYear: 0,
+    id: null,
+    category: null,
+  });
+
+  const toggleForm = () => {
+    setIsOpen(!isOpen);
+    setSeeModal(false);
+  };
 
   useEffect(() => {
     fetch(API)
@@ -24,18 +40,7 @@ export function Series() {
         console.error(e);
         setError(true)
       })
-
   }, []);
-
-  //Estado compuesto un objeto con propiedades no inicializadas
-  const [modalState, setModalState] = useState({
-    title: "",
-    img: "",
-    description: "",
-    releaseYear: 0,
-    id: null,
-    category: null,
-  });
 
   function filterToModal(title) {
     const serieFiltered = series.find(serie => serie.title == title);
@@ -77,8 +82,13 @@ export function Series() {
         releaseYear={modalState.releaseYear}
         id={modalState.id}
         category={modalState.category}
+        toggleForm={toggleForm}
       />
-
+      {isOpen &&
+        <EditForm
+          modalState={modalState}
+          toggleForm={toggleForm}
+        />}
     </div>
   );
 }
