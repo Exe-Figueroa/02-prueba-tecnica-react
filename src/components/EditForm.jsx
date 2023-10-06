@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
 export function EditForm({ modalState, toggleForm }) {
+  console.log("modalState", modalState)
   const [formData, setFormData] = useState({
     title: modalState.title,
     releaseYear: modalState.releaseYear,
@@ -35,6 +36,7 @@ export function EditForm({ modalState, toggleForm }) {
       if (response.ok) {
         alert('Título agregado exitosamente');
       } else {
+        console.log(response)
         alert('Hubo un error al agregar el título.');
       }
     } catch (error) {

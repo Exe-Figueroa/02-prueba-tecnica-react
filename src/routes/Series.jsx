@@ -8,7 +8,7 @@ import { EditForm } from "../components/EditForm";
 
 const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
 
-export function Series() {
+export function Series(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false)
@@ -40,7 +40,6 @@ export function Series() {
         console.error(e);
         setError(true)
       })
-
   }, []);
 
   function filterToModal(title) {

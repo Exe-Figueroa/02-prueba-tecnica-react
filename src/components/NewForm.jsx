@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
-export function NewForm({ modalState }) {
+export function NewForm() {
   const [formData, setFormData] = useState({
     category: '',
     title: '',

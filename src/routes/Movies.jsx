@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 import { EditForm } from "../components/EditForm";
 import "../styles/Movie.css";
-const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
+const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
 export function Movies(props) {
   const moviesData = [
