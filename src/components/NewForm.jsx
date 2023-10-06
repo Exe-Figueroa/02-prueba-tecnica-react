@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { CargaExitosa } from './CargaExitosa';
+import { CargaFallida } from './CargaFallida';
+
 import "../styles/NewForm.css";
+
 
 export function NewForm({modalState}) {
   const [formData, setFormData] = useState({
@@ -37,10 +41,10 @@ export function NewForm({modalState}) {
       });
 
       if (response.ok) {
-        alert('Título agregado exitosamente');
+        ;
         // Puedes hacer redirección o limpiar el formulario aquí si es necesario.
       } else {
-        alert('Hubo un error al agregar el título.');
+        ;
       }
     } catch (error) {
       console.error('Error al enviar el título:', error);
