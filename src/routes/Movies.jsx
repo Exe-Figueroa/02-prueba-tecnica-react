@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
-
 import { CategoryCard } from "../components/CategoryCard";
 import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 import { EditForm } from "../components/EditForm";
-
 import "../styles/Movie.css";
+
 const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
 
 export function Movies(props) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const moviesData = [
     {
       id: 1,
@@ -42,6 +39,7 @@ export function Movies(props) {
       releaseYear: 2020,
     },
   ]
+  const [isOpen, setIsOpen] = useState(false);
   const [movies, setMovies] = useState(moviesData);
   const [validator, setValidator] = useState(true);
   const [error, setError] = useState(false);
@@ -74,7 +72,6 @@ export function Movies(props) {
       });
 
   }, []);
-
 
 
   function filterToModal(title) {
@@ -124,6 +121,7 @@ export function Movies(props) {
       {isOpen &&
         <EditForm
           modalState={modalState}
+          toggleForm={toggleForm}
         />}
     </div>
   );

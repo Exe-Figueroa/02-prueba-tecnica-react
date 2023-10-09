@@ -1,21 +1,40 @@
 .new-form {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   background: #0D4491;
   gap: 5px;
   position: fixed;
-  width: 650px;
-  height: 400px;
+  width: 260px;
+  height: 470px;
   padding: 20px;
 
+}
+
+.new-form-btn-exit {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: #3498db;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: -60px;
 }
 
 .new-form-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+}
+
+span {
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .new-form-container select {
@@ -39,13 +58,14 @@
   border-radius: 10px;
   border: none;
   padding-left: 5px;
+
 }
 
 .new-form-container button {
   border: none;
   border-radius: 10px;
   width: 50%;
-  height: 30px;
+  height: 40px;
   margin-top: 35px;
   align-self: center;
   text-align: center;
@@ -57,4 +77,12 @@
 
 .new-form-container button:hover {
   border: 2px solid #ededf8;
+}
+
+@media (min-width: 768px) {
+  .new-form {
+    width: 650px;
+    height: 500px;
+    padding: 20px;
+  }
 }

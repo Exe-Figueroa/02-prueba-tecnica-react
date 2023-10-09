@@ -1,0 +1,20 @@
+.alert-container{
+    width:400px;
+    height: 100px;
+    background-color: rgb(61, 98, 166);
+    border-radius: 10px;
+    position: fixed;    
+}
+
+.wrong-img{
+    width:35px;
+    height: auto;
+    margin-top: 15px;
+}
+
+.wrong-alert-card{
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}

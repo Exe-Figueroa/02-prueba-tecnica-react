@@ -1,4 +1,4 @@
-.home-container{
+.home-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -7,11 +7,11 @@
   align-items: center;
 }
 
-.home-add{
+.home-add {
   position: fixed;
   right: 20px;
-  bottom: 290px;
-  font-size: 40px;
+  bottom: 390px;
+  font-size: 30px;
   font-weight: bolder;
   display: inline-block;
   padding: 10px 20px;
@@ -26,12 +26,19 @@
 /* Estilo del botón cuando el cursor está sobre él */
 .home-add:hover {
   background-color: #0D4491;
-  
+
 }
 
- 
-@media (min-width: 678px) {
-  .home-container{
+
+@media (min-width: 768px) {
+  .home-container {
     height: calc(100vh - 370px);
+  }
+
+  .home-add {
+    right: 20px;
+    bottom: 290px;
+    font-size: 40px;
+
   }
 }
