@@ -111,7 +111,7 @@ export function Movies(props) {
             key={index.id}
           />
         ))}
-      <Modal
+      {seeModal && <Modal
         seeModal={seeModal}
         setSeeModal={setSeeModal}
         title={modalState.title}
@@ -121,7 +121,7 @@ export function Movies(props) {
         id={modalState.id}
         category={modalState.category}
         toggleForm={toggleForm}
-      />
+      />}
       {isOpen &&
         <EditForm
           modalState={modalState}
