@@ -43,17 +43,17 @@ export function NewForm({ setHandleRequest, toggleForm }) {
         setHandleRequest({ success: true });
         setTimeout(() => {
           setHandleRequest({ success: false });
-        }, 2000)
+        }, 2000);
       } else {
         toggleForm();
         setHandleRequest({ failure: true });
         setTimeout(() => {
           setHandleRequest({ failure: false });
-        }, 2000)
+        }, 2000);
       }
     } catch (error) {
-      console.error('Error al enviar el título:', error);
-    }
+      console.error({ message: 'Error al completar la solicitud. Vuelva a intentarlo más tarde' });
+    };
   };
 
   return (

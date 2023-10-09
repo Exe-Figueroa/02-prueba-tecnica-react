@@ -5,40 +5,44 @@ import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 import { EditForm } from "../components/EditForm";
 import "../styles/Movie.css";
+import { CargaExitosa } from "../components/CargaExitosa";
+import { CargaFallida } from "../components/CargaFallida";
 
 const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
+const moviesData = [
+  {
+    id: 1,
+    title: "peli 1",
+    img: "url",
+    description: "lremapdmapiwndansdoasnasidnasindoaisd",
+    releaseYear: 2023,
+  },
+  {
+    id: 2,
+    title: "peli 2",
+    img: "",
+    description: "lalalala",
+    releaseYear: 2022,
+  },
+  {
+    id: 3,
+    title: "peli 3",
+    img: "",
+    description: "ajgjajg",
+    releaseYear: 2021,
+  },
+  {
+    id: 4,
+    title: "peli 4",
+    img: "",
+    description: "laldaf",
+    releaseYear: 2020,
+  },
+];
 
 export function Movies(props) {
-  const moviesData = [
-    {
-      id: 1,
-      title: "peli 1",
-      img: "url",
-      description: "lremapdmapiwndansdoasnasidnasindoaisd",
-      releaseYear: 2023,
-    },
-    {
-      id: 2,
-      title: "peli 2",
-      img: "",
-      description: "lalalala",
-      releaseYear: 2022,
-    },
-    {
-      id: 3,
-      title: "peli 3",
-      img: "",
-      description: "ajgjajg",
-      releaseYear: 2021,
-    },
-    {
-      id: 4,
-      title: "peli 4",
-      img: "",
-      description: "laldaf",
-      releaseYear: 2020,
-    },
-  ]
+  const [handleRequest, setHandleRequest] = useState({});
+
   const [isOpen, setIsOpen] = useState(false);
   const [movies, setMovies] = useState(moviesData);
   const [validator, setValidator] = useState(true);
@@ -71,7 +75,7 @@ export function Movies(props) {
         setError(true);
       });
 
-  }, []);
+  }, [handleRequest]);
 
 
   function filterToModal(title) {
@@ -107,7 +111,7 @@ export function Movies(props) {
             key={index.id}
           />
         ))}
-      <Modal
+      {seeModal && <Modal
         seeModal={seeModal}
         setSeeModal={setSeeModal}
         title={modalState.title}
@@ -117,12 +121,15 @@ export function Movies(props) {
         id={modalState.id}
         category={modalState.category}
         toggleForm={toggleForm}
-      />
+      />}
       {isOpen &&
         <EditForm
           modalState={modalState}
           toggleForm={toggleForm}
+          setHandleRequest={setHandleRequest}
         />}
+      {handleRequest.success && <CargaExitosa />}
+      {handleRequest.failure && <CargaFallida />}
     </div>
   );
 }

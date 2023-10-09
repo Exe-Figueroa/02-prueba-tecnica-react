@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "../styles/NewForm.css";
 
-export function EditForm({ modalState, toggleForm }) {
-  console.log("modalState", modalState)
+export function EditForm({ modalState, toggleForm, setHandleRequest }) {
+
   const [formData, setFormData] = useState({
     title: modalState.title,
     releaseYear: modalState.releaseYear,
@@ -34,14 +34,22 @@ export function EditForm({ modalState, toggleForm }) {
       });
 
       if (response.ok) {
-        alert('Título agregado exitosamente');
+        toggleForm();
+        setHandleRequest({ success: true });
+        setTimeout(() => {
+          setHandleRequest({ success: false });
+        }, 2000);
       } else {
-        console.log(response)
-        alert('Hubo un error al agregar el título.');
+        toggleForm();
+        setHandleRequest({ failure: true });
+        setTimeout(() => {
+          setHandleRequest({ failure: false });
+        }, 2000);
       }
     } catch (error) {
-      console.error({ error });
-    }
+      console.warn({error})
+      console.error({ message: 'Error al completar la solicitud. Vuelva a intentarlo más tarde' });
+    };
   };
 
   return (
