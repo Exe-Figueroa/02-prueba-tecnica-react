@@ -5,10 +5,14 @@ import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import "../styles/Series.css"
 import { EditForm } from "../components/EditForm";
+import { CargaExitosa } from "../components/CargaExitosa";
+import { CargaFallida } from "../components/CargaFallida";
 
 const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
 
 export function Series(props) {
+  const [handleRequest, setHandleRequest] = useState({});
+  
   const [isOpen, setIsOpen] = useState(false);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false)
@@ -34,13 +38,11 @@ export function Series(props) {
       .then(response => {
         setSeries(response)
         setValidator(true)
-        console.log(response)
       })
       .catch(e => {
-        console.error(e);
         setError(true)
       })
-  }, []);
+  }, [handleRequest]);
 
   function filterToModal(title) {
     const serieFiltered = series.find(serie => serie.title == title);
@@ -88,7 +90,10 @@ export function Series(props) {
         <EditForm
           modalState={modalState}
           toggleForm={toggleForm}
+          setHandleRequest={setHandleRequest}
         />}
+      {handleRequest.success && <CargaExitosa />}
+      {handleRequest.failure && <CargaFallida />}
     </div>
   );
 }
