@@ -1,19 +1,29 @@
-
 import React from 'react'
 import "../styles/Modal.css"
 
 
-export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category, toggleForm }) {
+export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category, toggleForm, setHandleRequest }) {
   async function deleteItem() {
-    const API = `https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${category}/${id}`;
+    setSeeModal(false);
+    const API = `https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${category}/${id}`;
+    console.log('eliminando');
     try {
       const res = await fetch(API, {
         method: 'DELETE'
       });
-      const data = await res.json()
-      console.log(data)
-      // location.reload()
-      alert('Se eliminó correctamente')
+      if (res.ok) {
+        console.log('eliminado');
+        setHandleRequest({ success: true, message: 'Se ha eliminado correctamente' });
+        setTimeout(() => {
+          setHandleRequest({ success: false });
+        }, 2000);
+      } else {
+        console.log('no se eliminó');
+        setHandleRequest({ failure: true, message: 'Fallo al eliminar' });
+        setTimeout(() => {
+          setHandleRequest({ failure: false });
+        }, 2000);
+      }
     } catch (error) {
       console.error(error)
     }

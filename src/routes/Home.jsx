@@ -13,7 +13,7 @@ const imgSeries = "https://www.latercera.com/resizer/gXOdyP_YUsjQ2MC6U9sUOv-gRxk
 
 
 export function Home() {
-  const [handlerRequest, setHandleRequest] = useState({});
+  const [handleRequest, setHandleRequest] = useState({});
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleForm = () => {
@@ -27,8 +27,8 @@ export function Home() {
       <button className="home-add"
         onClick={() => toggleForm()}>+</button>
       {isOpen && <NewForm setHandleRequest={setHandleRequest} toggleForm={toggleForm} />}
-      {handlerRequest.success && <CargaExitosa />}
-      {handlerRequest.failure && <CargaFallida />}
+      {handleRequest.success && <CargaExitosa message={handleRequest.message} />}
+      {handleRequest.failure && <CargaFallida message={handleRequest.message} />}
     </div>
   );
 

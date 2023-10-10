@@ -8,7 +8,7 @@ import "../styles/Movie.css";
 import { CargaExitosa } from "../components/CargaExitosa";
 import { CargaFallida } from "../components/CargaFallida";
 
-const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
+const API = 'https://api-moviesandseries-canterasoftware.onrender.com/api/v1/movies';
 const moviesData = [
   {
     id: 1,
@@ -89,7 +89,6 @@ export function Movies(props) {
       id: movieFiltered.id,
       category: movieFiltered.category
     });
-    console.log(modalState)
     setSeeModal(true);
   }
 
@@ -128,8 +127,8 @@ export function Movies(props) {
           toggleForm={toggleForm}
           setHandleRequest={setHandleRequest}
         />}
-      {handleRequest.success && <CargaExitosa />}
-      {handleRequest.failure && <CargaFallida />}
+      {handleRequest.success && <CargaExitosa message={handleRequest.message} />}
+      {handleRequest.failure && <CargaFallida message={handleRequest.message} />}
     </div>
   );
 }

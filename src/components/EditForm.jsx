@@ -25,7 +25,7 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
     event.preventDefault();
     console.log('submit')
     try {
-      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${modalState.category}/${modalState.id}`, {
+      const response = await fetch(`https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${modalState.category}/${modalState.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -35,13 +35,13 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
 
       if (response.ok) {
         toggleForm();
-        setHandleRequest({ success: true });
+        setHandleRequest({ success: true, message: 'Se editó correctamente'});
         setTimeout(() => {
-          setHandleRequest({ success: false });
+          setHandleRequest({ success: false});
         }, 2000);
       } else {
         toggleForm();
-        setHandleRequest({ failure: true });
+        setHandleRequest({ failure: true, message: 'Fallo al editar intente de nuevo mas tarde' });
         setTimeout(() => {
           setHandleRequest({ failure: false });
         }, 2000);
