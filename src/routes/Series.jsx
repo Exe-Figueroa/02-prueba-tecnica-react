@@ -8,7 +8,7 @@ import { EditForm } from "../components/EditForm";
 import { CargaExitosa } from "../components/CargaExitosa";
 import { CargaFallida } from "../components/CargaFallida";
 
-const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
+const API = "https://api-moviesandseries-canterasoftware.onrender.com/api/v1/series";
 
 export function Series(props) {
   const [handleRequest, setHandleRequest] = useState({});
@@ -85,6 +85,7 @@ export function Series(props) {
         id={modalState.id}
         category={modalState.category}
         toggleForm={toggleForm}
+        setHandleRequest={setHandleRequest}
       />}
       {isOpen &&
         <EditForm
@@ -92,8 +93,8 @@ export function Series(props) {
           toggleForm={toggleForm}
           setHandleRequest={setHandleRequest}
         />}
-      {handleRequest.success && <CargaExitosa />}
-      {handleRequest.failure && <CargaFallida />}
+      {handleRequest.success && <CargaExitosa message={handleRequest.message}/>}
+      {handleRequest.failure && <CargaFallida message={handleRequest.message}/>}
     </div>
   );
 }

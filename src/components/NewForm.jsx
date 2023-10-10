@@ -30,7 +30,7 @@ export function NewForm({ setHandleRequest, toggleForm }) {
     event.preventDefault();
     console.log('submit')
     try {
-      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${formData.category}`, {
+      const response = await fetch(`https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${formData.category}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,13 +40,13 @@ export function NewForm({ setHandleRequest, toggleForm }) {
 
       if (response.ok) {
         toggleForm();
-        setHandleRequest({ success: true });
+        setHandleRequest({ success: true, message: 'Se creó correctamente.' });
         setTimeout(() => {
           setHandleRequest({ success: false });
         }, 2000);
       } else {
         toggleForm();
-        setHandleRequest({ failure: true });
+        setHandleRequest({ failure: true, message: 'Error al crear' });
         setTimeout(() => {
           setHandleRequest({ failure: false });
         }, 2000);
