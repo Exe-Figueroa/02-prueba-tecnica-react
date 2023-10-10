@@ -8,7 +8,7 @@ import { EditForm } from "../components/EditForm";
 import { CargaExitosa } from "../components/CargaExitosa";
 import { CargaFallida } from "../components/CargaFallida";
 
-const API = "https://213vgqlp-3000.brs.devtunnels.ms/api/v1/series";
+const API = "https://api-moviesandseries-canterasoftware.onrender.com/api/v1/series";
 
 export function Series(props) {
   const [handleRequest, setHandleRequest] = useState({});

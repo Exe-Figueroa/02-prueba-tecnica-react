@@ -3,9 +3,9 @@ import React from 'react'
 import "../styles/Modal.css"
 
 
-export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category, toggleForm }) {
+export function Modal({ title, img, description, releaseYear, seeModal, setSeeModal, id, category, toggleForm, setHandleRequest }) {
   async function deleteItem() {
-    const API = `https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${category}/${id}`;
+    const API = `https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${category}/${id}`;
     try {
       const res = await fetch(API, {
         method: 'DELETE'
@@ -13,7 +13,18 @@ export function Modal({ title, img, description, releaseYear, seeModal, setSeeMo
       const data = await res.json()
       console.log(data)
       // location.reload()
-      alert('Se eliminó correctamente')
+      if (res.ok) {
+        setHandleRequest({ success: true });
+        setTimeout(() => {
+          setHandleRequest({ success: false, message: "se elimino correctamente" });
+        }, 2000);
+      } else {
+        setHandleRequest({ failure: true });
+        setTimeout(() => {
+          setHandleRequest({ failure: false, message: "no se pudo eliminar" });
+        }, 2000);
+      }
+      //alert('Se eliminó correctamente')
     } catch (error) {
       console.error(error)
     }

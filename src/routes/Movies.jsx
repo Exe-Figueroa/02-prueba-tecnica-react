@@ -8,7 +8,7 @@ import "../styles/Movie.css";
 import { CargaExitosa } from "../components/CargaExitosa";
 import { CargaFallida } from "../components/CargaFallida";
 
-const API = 'https://213vgqlp-3000.brs.devtunnels.ms/api/v1/movies';
+const API = 'https://api-moviesandseries-canterasoftware.onrender.com/api/v1/movies';
 const moviesData = [
   {
     id: 1,

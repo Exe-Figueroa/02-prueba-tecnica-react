@@ -25,7 +25,7 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
     event.preventDefault();
     console.log('submit')
     try {
-      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${modalState.category}/${modalState.id}`, {
+      const response = await fetch(`https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${modalState.category}/${modalState.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
         }, 2000);
       }
     } catch (error) {
-      console.warn({error})
+      console.warn({ error })
       console.error({ message: 'Error al completar la solicitud. Vuelva a intentarlo más tarde' });
     };
   };

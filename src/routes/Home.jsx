@@ -29,6 +29,7 @@ export function Home() {
       {isOpen && <NewForm setHandleRequest={setHandleRequest} toggleForm={toggleForm} />}
       {handlerRequest.success && <CargaExitosa />}
       {handlerRequest.failure && <CargaFallida />}
+
     </div>
   );
 

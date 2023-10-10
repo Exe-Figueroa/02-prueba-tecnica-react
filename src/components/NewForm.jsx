@@ -30,7 +30,7 @@ export function NewForm({ setHandleRequest, toggleForm }) {
     event.preventDefault();
     console.log('submit')
     try {
-      const response = await fetch(`https://213vgqlp-3000.brs.devtunnels.ms/api/v1/${formData.category}`, {
+      const response = await fetch(`https://api-moviesandseries-canterasoftware.onrender.com/api/v1/${formData.category}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
