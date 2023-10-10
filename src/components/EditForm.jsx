@@ -35,13 +35,13 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
 
       if (response.ok) {
         toggleForm();
-        setHandleRequest({ success: true });
+        setHandleRequest({ success: true, message: 'Se editó correctamente'});
         setTimeout(() => {
-          setHandleRequest({ success: false });
+          setHandleRequest({ success: false});
         }, 2000);
       } else {
         toggleForm();
-        setHandleRequest({ failure: true });
+        setHandleRequest({ failure: true, message: 'Fallo al editar intente de nuevo mas tarde' });
         setTimeout(() => {
           setHandleRequest({ failure: false });
         }, 2000);

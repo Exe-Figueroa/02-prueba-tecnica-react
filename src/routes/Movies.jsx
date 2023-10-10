@@ -89,7 +89,6 @@ export function Movies(props) {
       id: movieFiltered.id,
       category: movieFiltered.category
     });
-    console.log(modalState)
     setSeeModal(true);
   }
 
@@ -128,8 +127,8 @@ export function Movies(props) {
           toggleForm={toggleForm}
           setHandleRequest={setHandleRequest}
         />}
-      {handleRequest.success && <CargaExitosa />}
-      {handleRequest.failure && <CargaFallida />}
+      {handleRequest.success && <CargaExitosa message={handleRequest.message} />}
+      {handleRequest.failure && <CargaFallida message={handleRequest.message} />}
     </div>
   );
 }

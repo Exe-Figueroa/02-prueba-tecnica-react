@@ -85,6 +85,7 @@ export function Series(props) {
         id={modalState.id}
         category={modalState.category}
         toggleForm={toggleForm}
+        setHandleRequest={setHandleRequest}
       />}
       {isOpen &&
         <EditForm
@@ -92,8 +93,8 @@ export function Series(props) {
           toggleForm={toggleForm}
           setHandleRequest={setHandleRequest}
         />}
-      {handleRequest.success && <CargaExitosa />}
-      {handleRequest.failure && <CargaFallida />}
+      {handleRequest.success && <CargaExitosa message={handleRequest.message}/>}
+      {handleRequest.failure && <CargaFallida message={handleRequest.message}/>}
     </div>
   );
 }

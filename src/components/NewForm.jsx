@@ -40,13 +40,13 @@ export function NewForm({ setHandleRequest, toggleForm }) {
 
       if (response.ok) {
         toggleForm();
-        setHandleRequest({ success: true });
+        setHandleRequest({ success: true, message: 'Se creó correctamente.' });
         setTimeout(() => {
           setHandleRequest({ success: false });
         }, 2000);
       } else {
         toggleForm();
-        setHandleRequest({ failure: true });
+        setHandleRequest({ failure: true, message: 'Error al crear' });
         setTimeout(() => {
           setHandleRequest({ failure: false });
         }, 2000);
