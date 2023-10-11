@@ -47,7 +47,7 @@ export function EditForm({ modalState, toggleForm, setHandleRequest }) {
         }, 2000);
       }
     } catch (error) {
-      console.warn({error})
+      console.warn({ error })
       console.error({ message: 'Error al completar la solicitud. Vuelva a intentarlo más tarde' });
     };
   };
