@@ -4,47 +4,17 @@ import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
 import { Modal } from "../components/Modal";
 import { EditForm } from "../components/EditForm";
-import "../styles/Movie.css";
 import { CargaExitosa } from "../components/CargaExitosa";
 import { CargaFallida } from "../components/CargaFallida";
+import "../styles/Movie.css";
 
 const API = 'https://api-moviesandseries-canterasoftware.onrender.com/api/v1/movies';
-const moviesData = [
-  {
-    id: 1,
-    title: "peli 1",
-    img: "url",
-    description: "lremapdmapiwndansdoasnasidnasindoaisd",
-    releaseYear: 2023,
-  },
-  {
-    id: 2,
-    title: "peli 2",
-    img: "",
-    description: "lalalala",
-    releaseYear: 2022,
-  },
-  {
-    id: 3,
-    title: "peli 3",
-    img: "",
-    description: "ajgjajg",
-    releaseYear: 2021,
-  },
-  {
-    id: 4,
-    title: "peli 4",
-    img: "",
-    description: "laldaf",
-    releaseYear: 2020,
-  },
-];
 
 export function Movies(props) {
   const [handleRequest, setHandleRequest] = useState({});
 
   const [isOpen, setIsOpen] = useState(false);
-  const [movies, setMovies] = useState(moviesData);
+  const [movies, setMovies] = useState([]);
   const [validator, setValidator] = useState(true);
   const [error, setError] = useState(false);
   const [seeModal, setSeeModal] = useState(false);
