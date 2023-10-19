@@ -13,6 +13,7 @@ const API = "https://api-moviesandseries-canterasoftware.onrender.com/api/v1/ser
 export function Series(props) {
   const [handleRequest, setHandleRequest] = useState({});
 
+  
   const [isOpen, setIsOpen] = useState(false);
   const [series, setSeries] = useState([]);
   const [validator, setValidator] = useState(false)
