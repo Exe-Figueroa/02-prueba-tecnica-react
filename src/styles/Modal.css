@@ -124,7 +124,7 @@
   .modal-container {
     flex-direction: row;
     width: 850px;
-    height: auto;
+    height: 450px;
     bottom: 85%;
     transform: translateY(100%);
   }
