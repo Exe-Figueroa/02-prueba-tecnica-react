@@ -4,7 +4,7 @@ import { Movies } from "./routes/Movies";
 import { Series } from "./routes/Series";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-
+import './index.css';
 export function App() {
   return (
     <BrowserRouter>
