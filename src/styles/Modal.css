@@ -124,7 +124,7 @@
   .modal-container {
     flex-direction: row;
     width: 850px;
-    height: 450px;
+    height: auto;
     bottom: 85%;
     transform: translateY(100%);
   }
@@ -143,7 +143,7 @@
 
   .modal-container-contend {
     flex-direction: row;
-    align-self: self-start
+    align-self: self-start;
   }
 
   .modal-container-card {
@@ -166,6 +166,7 @@
     padding: 25px;
     line-height: 3rem;
     text-align: start;
+    max-height: 350px;
   }
 
   .bottons {
